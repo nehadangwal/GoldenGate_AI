@@ -23,10 +23,32 @@ Running a mixed-complexity workload of 1,000 requests using 2026 pricing tiers:
 | **Latency (p99)** | 1,400ms | **450ms** | **3x Faster** |
 | **Budget Compliance** | Manual / Post-hoc | **Real-time Blocking** | **100% Guaranteed** |
 
+🛡️ Governance & Circuit Breaking: Stopping "Agentic Drift"
+In an autonomous world, a single coding error can lead to infinite recursive loops. GoldenGate AI includes a built-in safety layer to prevent "Ghost Bills" and infrastructure exhaustion:
+* Semantic Loop Prevention: Intercepts and terminates identical reasoning requests before they hit the LLM provider.
+* Velocity Throttling: Detects sub-second request bursts characteristic of failed agentic loops.
+* Real-time Budget Enforcement: Hard-blocks requests at the gateway once project-level caps are met, ensuring 100% fiscal compliance.
+
 ## 🛠️ Tech Stack
 * **FastAPI:** High-performance async API layer.
 * **LiteLLM:** Model abstraction for 100+ LLMs.
 * **Pydantic:** Strict data validation for engineering governance.
+
+
+⚡ Quick Start: See it in Action
+Experience the "Adaptive Golden Path" without needing an API key by using the built-in Mock Mode.
+
+1. Clone & Setup
+    git clone https://github.com/nehadangwal/GoldenGate_AI.git
+    cd GoldenGate_AI
+
+
+3. Run the Governance & Loop Test
+This script demonstrates the 77.6% cost reduction and the Automatic Circuit Breaker.
+ 
+    export MOCK_MODE=true
+    python3 test_guardrails.py
+
 
 ## 📖 White Paper
 This POC is the technical implementation of the principles found in: 
