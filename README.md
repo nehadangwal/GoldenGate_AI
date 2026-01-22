@@ -29,6 +29,20 @@ In an autonomous world, a single coding error can lead to infinite recursive loo
 * Velocity Throttling: Detects sub-second request bursts characteristic of failed agentic loops.
 * Real-time Budget Enforcement: Hard-blocks requests at the gateway once project-level caps are met, ensuring 100% fiscal compliance.
 
+🛡️ Phase 2 Update: Governance & FinOps Engine
+The latest release introduces Production-Grade Guardrails to solve the "AI Tax" and "Agentic Drift."
+Adaptive Inference Router: Automatically downcycles routine tasks to SLMs (GPT-4o-mini), reserving Frontier models for high-complexity architectural reasoning.
+Shadow Mode Mirroring: Validates model downcycling in real-time by mirroring requests to expensive models in the background to ensure zero quality loss.
+FinOps Observability: Real-time tracking of "Cost Avoidance" per request and cumulative session savings.
+Recursive Circuit Breaker: Semantic and velocity-based throttling to intercept infinite agentic loops before token exhaustion.
+
+📊 Live Benchmark (Mock Mode)
+Run the verification suite to see the FinOps engine in action:
+    export MOCK_MODE=true
+    python3 test_shadow.py
+
+**Output: 💰 FINOPS INSIGHT: This request saved $0.00485 via Adaptive Routing.**
+
 ## 🛠️ Tech Stack
 * **FastAPI:** High-performance async API layer.
 * **LiteLLM:** Model abstraction for 100+ LLMs.
