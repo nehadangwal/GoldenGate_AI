@@ -17,5 +17,9 @@ def run_verified_tests():
     print("--- TEST 2: FINOPS SAVINGS & SHADOW MODE ---")
     router.execute("Hello, how are you?", "p2", shadow_mode=True)
 
+    print("\n--- TEST 3: CUMULATIVE IMPACT CHECK ---")
+    # Another simple prompt to trigger the shadow logic again
+    router.execute("What is the capital of France?", "p3", shadow_mode=True)
+
 if __name__ == "__main__":
     run_verified_tests()
