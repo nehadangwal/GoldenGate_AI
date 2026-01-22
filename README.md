@@ -81,3 +81,4 @@ This script demonstrates the 77.6% cost reduction and the Automatic Circuit Brea
 ## 📖 White Paper
 This POC is the technical implementation of the principles found in: 
 **"The FinOps of Generative AI: From Prototype to Profitability"** by Neha Dangwal.
+**v1.5 - Revised Jan 2026: Featuring Adaptive Routing & Shadow Mode Benchmarks**
