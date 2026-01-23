@@ -94,6 +94,8 @@ Direct Cost: What you would have paid using only Frontier models.
 GoldenGate Cost: The actual cost using Adaptive Routing.
 The Delta: Your total capital efficiency gain (Target: >75%).
 
+**Note: For the full mathematical breakdown behind these benchmarks, refer to the**
+https://github.com/nehadangwal/GoldenGate_AI/releases/tag/v1.5.0
 
 ## 📖 White Paper
 This POC is the technical implementation of the principles found in: 
