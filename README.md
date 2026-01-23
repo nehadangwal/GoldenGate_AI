@@ -86,7 +86,7 @@ Ensure you have your environment variables set for the models you wish to test (
    
 2. Execute the Benchmark
 Run the script directly from the root directory:
-    python benchmark_report.py
+    python3 benchmark_report.py
 
 3. Understanding the Output
 The script will generate a real-time ledger in your terminal. Look for the "FinOps Summary" at the bottom:
