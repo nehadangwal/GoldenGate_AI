@@ -101,3 +101,6 @@ https://github.com/nehadangwal/GoldenGate_AI/releases/tag/v1.5.0
 This POC is the technical implementation of the principles found in: 
 **"The FinOps of Generative AI: From Prototype to Profitability"** by Neha Dangwal.
 **v1.5 - Revised Jan 2026: Featuring Adaptive Routing & Shadow Mode Benchmarks**
+
+Featured Articles:
+https://medium.com/@nehadangwal/the-ai-tax-is-breaking-engineering-margins-a-17m-perspective-on-finops-7fce44983866
