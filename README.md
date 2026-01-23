@@ -77,6 +77,23 @@ This script demonstrates the 77.6% cost reduction and the Automatic Circuit Brea
     export MOCK_MODE=true
     python3 test_shadow.py
 
+📊 How to Run Benchmarks
+To verify the cost-saving and latency metrics of the GoldenGate framework, you can run the automated benchmark suite. This script simulates 1,000 mixed-complexity requests to compare a "Direct-to-Frontier" approach against our "Adaptive Inference" logic.
+
+1. Prerequisites
+Ensure you have your environment variables set for the models you wish to test (e.g., OpenAI or Anthropic):
+    export OPENAI_API_KEY='your_key_here'
+   
+2. Execute the Benchmark
+Run the script directly from the root directory:
+    python benchmark_report.py
+
+3. Understanding the Output
+The script will generate a real-time ledger in your terminal. Look for the "FinOps Summary" at the bottom:
+Direct Cost: What you would have paid using only Frontier models.
+GoldenGate Cost: The actual cost using Adaptive Routing.
+The Delta: Your total capital efficiency gain (Target: >75%).
+
 
 ## 📖 White Paper
 This POC is the technical implementation of the principles found in: 
