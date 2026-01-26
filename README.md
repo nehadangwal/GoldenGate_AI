@@ -70,6 +70,33 @@ To solve the security bottleneck of autonomous agents, GoldenGate AI implements 
 | **Execution Timeout** | None | 5 Seconds (Enforced) |
 | **Data Exfiltration** | Possible | Blocked (Null Network Stack) |
 
+```mermaid
+graph TD
+    subgraph "Production VPC"
+    A[Client Request] --> B[GoldenGate AI Gateway]
+    B --> C{Adaptive Router}
+    
+    subgraph "Isolated Sidecar Sandbox"
+    C -->|Untrusted Code| D[Sandbox Manager]
+    D --> E[gVisor / runsc Kernel]
+    E --> F[Cgroups v2 Resource Cap]
+    F --> G[Python Execution]
+    end
+    
+    G -->|Sanitized Output| B
+    B --> H[Secure Response]
+    end
+
+    style D fill:#f96,stroke:#333,stroke-width:2px
+    style E fill:#f96,stroke:#333,stroke-width:4px
+```
+
+🏛️ Architectural Sovereignty: Why the Sidecar?
+In 2026, building an AI gateway is trivial; building a Trusted Execution Environment is where the engineering challenge lies.
+Most platforms suffer from "Inference Drift" and "Execution Risk." GoldenGate AI solves this by decoupling the Inference Logic (Gateway) from the Execution Risk (Sandbox). 
+By leveraging gVisor, we move from a "Shared Kernel" model to a "User-space Isolation" model. This allows us to offer Zero-Trust Tool Use for autonomous agents—a prerequisite for enterprise deployment at scale.
+
+
 ## 🛠️ Tech Stack
 * **FastAPI:** High-performance async API layer.
 * **LiteLLM:** Model abstraction for 100+ LLMs.
