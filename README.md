@@ -91,6 +91,24 @@ graph TD
     style E fill:#f96,stroke:#333,stroke-width:4px
 ```
 
+```mermaid
+sequenceDiagram
+    participant LLM as Frontier Model
+    participant GG as GoldenGate Gateway
+    participant SM as Sandbox Manager (Sidecar)
+    participant Kernel as Host Kernel
+
+    LLM->>GG: Returns Python Code
+    GG->>SM: execute_code(snippet)
+    Note over SM: Check Environment (Darwin vs Linux)
+    SM->>SM: Apply Cgroups & Timeouts
+    SM->>Kernel: Request Syscall (e.g. Read File)
+    Kernel-->>SM: Intercepted/Blocked (gVisor)
+    Note right of SM: Execution Timeout Triggered?
+    SM-->>GG: Return Output or Timeout Error
+    GG-->>LLM: Feed Result back to Agent
+```
+
 🏛️ Architectural Sovereignty: Why the Sidecar?
 In 2026, building an AI gateway is trivial; building a Trusted Execution Environment is where the engineering challenge lies.
 Most platforms suffer from "Inference Drift" and "Execution Risk." GoldenGate AI solves this by decoupling the Inference Logic (Gateway) from the Execution Risk (Sandbox). 
