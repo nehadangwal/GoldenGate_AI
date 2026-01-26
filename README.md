@@ -46,12 +46,29 @@ Verified Performance Log:
 ### 1. FinOps Audit Engine
 Real-time tracking of "Cost Avoidance." The system calculates the delta between the requested model and the optimized route.
 * **Output:** `💰 FINOPS INSIGHT: This request saved $0.00485`
-
+  
 ### 2. Semantic Circuit Breaker
 Intercepts "Agentic Drift." If an agent enters a recursive loop, GoldenGate detects the sub-second semantic repetition and kills the process before the first token is billed.
 
 ### 3. Shadow Mode (Parity Testing)
 When routing to an SLM, the gateway can optionally mirror the request to a Frontier model. This creates a data-driven "Confidence Score" for model migration.
+
+
+## 🛡️ Secure Agentic Execution (SAE)
+To solve the security bottleneck of autonomous agents, GoldenGate AI implements a **Sidecar Sandbox** model. This ensures that agent-generated code never runs "naked" on the production host.
+
+### Key Security Features:
+* **Kernel Isolation:** Uses `gVisor (runsc)` to provide a user-space kernel, intercepting potentially malicious syscalls.
+* **Fiscal Guardrails (FinOps):** Integrated `Cgroups v2` and timeout logic to prevent "Ghost Bills" from infinite agentic loops.
+* **Environment Awareness:** The platform automatically detects the host OS (Darwin vs. Linux) to apply appropriate security tiers without breaking developer workflows.
+
+### Performance & Governance Stats:
+| Metric | Ungoverned | GoldenGate (SAE) |
+| :--- | :--- | :--- |
+| **Security Boundary** | Shared Host Kernel | User-space Isolated (gVisor) |
+| **CPU/RAM Cap** | Uncapped (Risk) | 0.5 vCPU / 512MB RAM |
+| **Execution Timeout** | None | 5 Seconds (Enforced) |
+| **Data Exfiltration** | Possible | Blocked (Null Network Stack) |
 
 ## 🛠️ Tech Stack
 * **FastAPI:** High-performance async API layer.
