@@ -168,3 +168,7 @@ Featured Articles:
 https://medium.com/@nehadangwal/the-ai-tax-is-breaking-engineering-margins-a-17m-perspective-on-finops-7fce44983866
 
 https://open.substack.com/pub/nehadangwal/p/deep-dive-inside-goldengate-ai-how?r=69zwe&utm_campaign=post&utm_medium=web
+
+https://medium.com/@nehadangwal/the-sovereign-agent-why-naked-ai-execution-is-an-enterprise-liability-f4f31a116493
+
+https://open.substack.com/pub/nehadangwal/p/the-architecture-of-caution-engineering?utm_campaign=post-expanded-share&utm_medium=web
