@@ -10,14 +10,14 @@ The Solution: A strategic mediation layer that enforces The Golden Path for ever
 
 ✨ Key Capabilities
 1. Adaptive Routing (FinOps Engine)
-GoldenGate AI acts as an intelligent traffic controller. It automatically offloads routine tasks to Small Language Models (SLMs), reserving expensive frontier models for high-stakes reasoning.
-Real-Time Visibility: Every request generates a "FinOps Insight," calculating the immediate cost avoidance.
-
+   GoldenGate AI acts as an intelligent traffic controller. It automatically offloads routine tasks to Small Language Models (SLMs), reserving expensive frontier models for high-stakes reasoning.
+   Real-Time Visibility: Every request generates a "FinOps Insight," calculating the immediate cost avoidance.
+   
 2. Semantic Circuit Breakers
-To prevent "Agentic Drift," GoldenGate monitors requests for sub-second semantic repetition. It kills recursive agentic loops before the first "hallucinated" token is billed.
-
+   To prevent "Agentic Drift," GoldenGate monitors requests for sub-second semantic repetition. It kills recursive agentic loops before the first "hallucinated" token is billed.
+   
 3. Secure Agentic Execution (SAE)
-GoldenGate decouples Inference Logic from Execution Risk. By leveraging a Sidecar Sandbox model (utilizing gVisor/runsc), agent-generated code is executed in a user-space kernel, preventing "naked" execution on production hosts.
+   GoldenGate decouples Inference Logic from Execution Risk. By leveraging a Sidecar Sandbox model (utilizing gVisor/runsc), agent-generated code is executed in a user-space kernel, preventing "naked" execution     on production hosts.
 
 📊 Validated Benchmarks (2026 Tiers)
 Running a mixed-complexity workload of 1,000 requests:
