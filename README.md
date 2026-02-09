@@ -52,9 +52,9 @@ See the FinOps engine calculate "Cost Avoidance" in real-time.
     export MOCK_MODE=true
     python3 test_shadow.py
 
-📖 White Paper & Deep Dives
+📖 Deep Dives
 This project is the technical implementation of the principles found in Neha Dangwal’s 2026 research series:
-The AI Tax: A $17M Perspective on FinOps (Medium) (https://medium.com/@nehadangwal/the-ai-tax-is-breaking-engineering-margins-a-17m-perspective-on-finops-7fce44983866)
+The AI Tax: [A $17M Perspective on FinOps](https://medium.com/@nehadangwal/the-ai-tax-is-breaking-engineering-margins-a-17m-perspective-on-finops-7fce44983866)
 The Sovereign Agent: [Why Naked AI Execution is a Liability](https://medium.com/@nehadangwal/the-sovereign-agent-why-naked-ai-execution-is-an-enterprise-liability-f4f31a116493)
 
 🤝 Enterprise & IP
