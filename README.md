@@ -38,9 +38,9 @@ Governance Stubs: Interfaces for implementing proprietary circuit breakers.
 Test the governance and loop-protection logic in Mock Mode (no API keys required).
 
 1. Installation
-    git clone https://github.com/nehadangwal/GoldenGate_AI.git
+    ```git clone https://github.com/nehadangwal/GoldenGate_AI.git
     cd GoldenGate_AI
-    pip install -r requirements.txt
+    pip install -r requirements.txt```
 
 2. Run the Governance & Loop Test
 Observe how the system detects recursive loops and switches to the most cost-efficient route.
