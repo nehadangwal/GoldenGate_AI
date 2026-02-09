@@ -1,0 +1,22 @@
+# GoldenGate AI - Public Repo GitIgnore
+
+# Private Engine & IP (Explicitly block the real logic)
+core/private_engine/
+logic/adaptive_routing_v*.py
+scripts/internal/
+
+# Environment & Credentials
+.env
+*.pem
+secrets.json
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.pytest_cache/
+
+# System-specific
+.DS_Store
