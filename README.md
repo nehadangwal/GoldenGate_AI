@@ -1,4 +1,5 @@
 🌉 SentryNode Gateway: The Semantic Security Layer for Autonomous Agents.
+
 Architecting Technical Sovereignty for the AI Era.
 SentryNode is a high-performance framework designed to eliminate the "AI Tax." As organizations scale, they face a dual crisis: unpredictable token costs and the security risks of autonomous agents.
 SentryNode implements Adaptive Inference and FinOps Guardrails to ensure every token spent translates to business value, achieving an average of 77.6% cost reduction without quality loss.
