@@ -1,8 +1,24 @@
 🌉 SentryNode Gateway: The Semantic Security Layer for Autonomous Agents
 
-![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-[![Status](https://img.shields.io/badge/Status-Patent_Pending-green.svg)](Status: Patent Pending (U.S. Provisional Application No. 63/982,542)
+[![Status](https://img.shields.io/badge/Status-Patent_Pending-green.svg)](#patent-information)
+
+### 🛡️ Patent Information
+**U.S. Patent Pending (Application No. 63/982,542)** *Filed February 13, 2026*
+
+This repository contains the official implementation of the SentryNode Gateway architecture, as disclosed in our USPTO filing. Key protected technologies include:
+* [cite_start]**Adaptive Inference Routing** (SLM-First Strategy) [cite: 113, 131]
+* [cite_start]**Shadow Mode Validation Engine** (Parallel Quality Checks) [cite: 114, 135]
+* [cite_start]**Semantic Circuit Breaker** (Recursive Loop Detection) [cite: 116, 143]
+* [cite_start]**Sidecar Sandbox Execution** (Kernel-level Isolation) [cite: 119, 145]
+  
+
+### ⚖️ Licensing
+Licensed under the **Apache License, Version 2.0**. This license includes a **patent grant** protecting both contributors and users. See the [LICENSE](./LICENSE) and [NOTICE](./NOTICE) files for details.
+
+### ⚖️ Licensing
+Licensed under the **Apache License, Version 2.0**. This license includes a **patent grant** protecting both contributors and users. See the [LICENSE](./LICENSE) and [NOTICE](./NOTICE) files for details.
 
 Architecting Technical Sovereignty for the AI Era.
 SentryNode is a high-performance framework designed to eliminate the "AI Tax." As organizations scale, they face a dual crisis: unpredictable token costs and the security risks of autonomous agents.
