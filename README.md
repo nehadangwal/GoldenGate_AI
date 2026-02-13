@@ -145,3 +145,4 @@ The Sovereign Agent: [Why Naked AI Execution is a Liability](https://medium.com/
 This public repository contains the open-access framework and benchmarking tools. For inquiries regarding the SentryNode Proprietary Engine (Private IP), Adaptive Routing Algorithms, or Enterprise Sandbox configurations, please contact [Neha Dangwal].
 
 Legal Notice: SentryNode and its underlying adaptive routing methodologies and secure sandbox architectures are the Intellectual Property of Neha Dangwal. Certain components described herein are subject to pending patent applications.
+Status: Patent Pending (U.S. Provisional Application No. 63/982,542)
