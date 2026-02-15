@@ -37,13 +37,15 @@ The Solution: A strategic mediation layer that enforces The Golden Path for ever
 3. Secure Agentic Execution (SAE)
    SentryNode decouples Inference Logic from Execution Risk. By leveraging a Sidecar Sandbox model (utilizing gVisor/runsc), agent-generated code is executed in a user-space kernel, preventing "naked" execution     on production hosts.
 
-📊 Validated Benchmarks (2026 Tiers)
+📊 Validated Benchmarks (2026 Tiers) 
 Running a mixed-complexity workload of 1,000 requests:
 Metric	                Ungoverned (Direct)	      SentryNode (Optimized)	    Improvement
 Cost per 1k Requests	  $5.00	                    $1.12	                      77.6% Reduction
 Routing Strategy	      Static / Premium	        Adaptive / SLM-First	      80% Offload
 Circuit Breakers	      0 (Infinite Spend)	      100% Intercepted	          Risk: Eliminated
 Quality Parity	        N/A	                      98% Semantic Match	        Zero Loss
+
+![SentryNode Efficiency Gain](./ai_cost_savings.png)
 
 ## 📖 Strategic Framework & Research
 SentryNode isn't just a gateway; it's a financial architecture for the agentic era.
