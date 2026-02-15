@@ -165,3 +165,11 @@ The Sovereign Agent: [Why Naked AI Execution is a Liability](https://medium.com/
 This public repository contains the open-access framework and benchmarking tools. For inquiries regarding the SentryNode Proprietary Engine (Private IP), Adaptive Routing Algorithms, or Enterprise Sandbox configurations, please contact [Neha Dangwal].
 
 Legal Notice: SentryNode and its underlying adaptive routing methodologies and secure sandbox architectures are the Intellectual Property of Neha Dangwal. Certain components described herein are subject to pending patent applications.
+
+
+🤝 Community & Feedback
+SentryNode is built on the principle of Architectural Sovereignty. We value input from AI Infrastructure engineers, FinOps practitioners, and Automation specialists.
+Found a Bottleneck? Open an Issue.
+Have a Design Suggestion? Join the Discussions to talk about Adaptive Routing edge cases.
+Enterprise Deep-Dive: For inquiries regarding the proprietary gVisor-hardened core or custom routing algorithms, please contact Neha Dangwal via LinkedIn.
+“The metric that matters in 2026 isn't just Accuracy—it's Cost Per Successful Task.”
