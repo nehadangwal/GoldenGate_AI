@@ -52,31 +52,25 @@ SentryNode isn't just a gateway; it's a financial architecture for the agentic e
 * **[Executive Summary](./EXECUTIVE_SUMMARY.md)**: The high-level business case for dismantling the "AI Tax" and achieving $17M+ ROI.
 * **[Research Pillars](./RESEARCH_PILLARS.md)**: Technical deep-dive into Adaptive Routing, Shadow Mode, and Unit Economics.
 
-🗺️ Strategic Roadmap
+## 🗺️ Strategic Roadmap
+
 The SentryNode framework is evolving from a benchmarking suite into a production-grade sovereignty layer. Progress is tracked through the following development epochs:
-Epoch 1: Foundational Framework (Current)
-[x] Patent-Pending Architecture: Public disclosure of methodology for Adaptive Routing (#63/982,542).
 
-[x] Reference Implementation: Public mock engine for cost-reduction simulations.
+#### **Epoch 1: Foundational Framework (Current)**
+* [x] **Patent-Pending Architecture**: Public disclosure of methodology for Adaptive Routing (#63/982,542).
+* [x] **Reference Implementation**: Public mock engine for cost-reduction simulations.
+* [x] **FinOps Benchmarking**: Validated 77.6% unit-cost reduction logic.
+* [ ] **Model Interop**: Integration stubs for Llama 3 and Mistral local endpoints.
 
-[x] FinOps Benchmarking: Validated 77.6% unit-cost reduction logic.
+#### **Epoch 2: Quality & Governance (Next Up)**
+* [ ] **Shadow Mode API**: Establishing real-time parity validation to ensure SLM outputs match Frontier intelligence.
+* [ ] **Advanced Circuit Breaking**: Semantic loop detection for high-frequency multi-agent workflows.
+* [ ] **Telemetry Integration**: Open-telemetry hooks for existing FinOps observability stacks.
 
-[ ] Model Interop: Integration stubs for Llama 3 and Mistral local endpoints.
-
-Epoch 2: Quality & Governance (Next Up)
-[ ] Shadow Mode API: Establishing real-time parity validation to ensure SLM outputs match Frontier intelligence.
-
-[ ] Advanced Circuit Breaking: Semantic loop detection for high-frequency multi-agent workflows.
-
-[ ] Telemetry Integration: Open-telemetry hooks for existing FinOps observability stacks.
-
-Epoch 3: Enterprise Sovereignty (H2 2026 & Beyond)
-
-[ ] Sidecar Sandbox Core: Hardened execution utilizing gVisor/runsc to decouple inference from risk.
-
-[ ] Sovereign Engine v1.0: General availability of proprietary adaptive routing weights and kernel-level isolation.
-
-[ ] Cross-Cloud Arbitrage: Real-time routing between AWS, Azure, and private compute clusters based on spot pricing.
+#### **Epoch 3: Enterprise Sovereignty (H2 2026 & Beyond)**
+* [ ] **Sidecar Sandbox Core**: Hardened execution utilizing gVisor/runsc to decouple inference from risk.
+* [ ] **Sovereign Engine v1.0**: General availability of proprietary adaptive routing weights and kernel-level isolation.
+* [ ] **Cross-Cloud Arbitrage**: Real-time routing between AWS, Azure, and private compute clusters based on spot pricing.
 
 🛠️ Public Framework Architecture
 This repository provides the Interface Specifications and Benchmarking Suite for the SentryNode ecosystem.
