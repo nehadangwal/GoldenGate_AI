@@ -62,8 +62,8 @@ Test the governance and loop-protection logic in Mock Mode (no API keys required
 
 1. Installation
 ```
-    git clone https://github.com/nehadangwal/SentryNode_AI.git
-    cd SentryNode_AI
+    git clone https://github.com/nehadangwal/sentrynode-gateway.git
+    cd sentrynode-gateway
     pip install -r requirements.txt
 ```
 
