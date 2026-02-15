@@ -17,9 +17,6 @@ This repository contains the official implementation of the SentryNode Gateway a
 ### ⚖️ Licensing
 Licensed under the **Apache License, Version 2.0**. This license includes a **patent grant** protecting both contributors and users. See the [LICENSE](./LICENSE) and [NOTICE](./NOTICE) files for details.
 
-### ⚖️ Licensing
-Licensed under the **Apache License, Version 2.0**. This license includes a **patent grant** protecting both contributors and users. See the [LICENSE](./LICENSE) and [NOTICE](./NOTICE) files for details.
-
 Architecting Technical Sovereignty for the AI Era.
 SentryNode is a high-performance framework designed to eliminate the "AI Tax." As organizations scale, they face a dual crisis: unpredictable token costs and the security risks of autonomous agents.
 SentryNode implements Adaptive Inference and FinOps Guardrails to ensure every token spent translates to business value, achieving an average of 77.6% cost reduction without quality loss.
@@ -47,6 +44,11 @@ Cost per 1k Requests	  $5.00	                    $1.12	                      77.
 Routing Strategy	      Static / Premium	        Adaptive / SLM-First	      80% Offload
 Circuit Breakers	      0 (Infinite Spend)	      100% Intercepted	          Risk: Eliminated
 Quality Parity	        N/A	                      98% Semantic Match	        Zero Loss
+
+## 📖 Strategic Framework & Research
+SentryNode isn't just a gateway; it's a financial architecture for the agentic era.
+* **[Executive Summary](./EXECUTIVE_SUMMARY.md)**: The high-level business case for dismantling the "AI Tax" and achieving $17M+ ROI.
+* **[Research Pillars](./RESEARCH_PILLARS.md)**: Technical deep-dive into Adaptive Routing, Shadow Mode, and Unit Economics.
 
 🛠️ Public Framework Architecture
 This repository provides the Interface Specifications and Benchmarking Suite for the SentryNode ecosystem.
