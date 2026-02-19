@@ -197,12 +197,6 @@ The AI Tax: **[A $17M Perspective on FinOps](https://medium.com/@nehadangwal/the
 
 The Sovereign Agent: **[Why Naked AI Execution is a Liability](https://medium.com/@nehadangwal/the-sovereign-agent-why-naked-ai-execution-is-an-enterprise-liability-f4f31a116493)**
 
-For a technical breakdown of the philosophies driving SentryNode, explore our published research:
-
-**[The Architecture of Caution](https://nehadangwal.substack.com/p/the-architecture-of-caution-engineering)**: Engineering "Sovereign Execution" using gVisor and Cgroups v2 to contain agentic drift.
-
-**[Inside the 77.6% Savings](https://nehadangwal.substack.com/p/deep-dive-inside-goldengate-ai-how)**: A deep-dive into the Semantic Decision Matrix and the "Shadow Mode" parity checks that maintain intelligence while reducing costs.
-  
 🤝 Enterprise & IP
 This public repository contains the open-access framework and benchmarking tools. For inquiries regarding the SentryNode Proprietary Engine (Private IP), Adaptive Routing Algorithms, or Enterprise Sandbox configurations, please contact [Neha Dangwal].
 
