@@ -100,6 +100,21 @@ See the FinOps engine calculate "Cost Avoidance" in real-time.
     python3 test_shadow.py
 ```
 
+⚡ Quick Start: Docker Environment
+  Experience the governance and sovereignty logic using our hardened container setup.
+```
+    # 1. Build the Hardened Environment
+    docker compose -f infrastructure/docker-compose.yaml up -d --build
+    
+    # 2. Verify Sovereign State (HMAC Signed Request)
+    curl -X POST http://localhost:8001/api/v1/chat \
+    -H "Content-Type: application/json" \
+    -d '{"prompt": "Analyze efficiency metrics", "user_id": "audit_user_01"}'
+    
+    # 3. Audit the FinOps Ledger (Redis)
+    docker exec -it sentrynode_cache redis-cli HGETALL stats:audit_user_01
+```
+
 ## 📊 Sample Output
 ```
 python3 benchmark_report.py
