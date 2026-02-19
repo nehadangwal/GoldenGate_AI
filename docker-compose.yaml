@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  # The SentryNode Gateway (Hardened Interface)
+  sentrynode_gateway:
+    build: .
+    ports:
+      - "8001:8001"
+    environment:
+      - MOCK_MODE=true
+      - REDIS_HOST=sentrynode_cache
+    depends_on:
+      - sentrynode_cache
+    networks:
+      - sentry_network
+
+  # The FinOps Ledger & State Cache
+  sentrynode_cache:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+    networks:
+      - sentry_network
+
+networks:
+  sentry_network:
+    driver: bridge

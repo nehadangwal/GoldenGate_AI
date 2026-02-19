@@ -1,8 +1,8 @@
 import os
-from mock_engine import GoldenGateMock
+from mock_engine import SentryNodeGateway
 
 def run_shadow_test():
-    gateway = GoldenGateMock()
+    gateway = SentryNodeGateway()
     print("🧪 [SHADOW MODE] Validating SLM vs. Frontier Parity...")
     
     # Simulate mirroring a request to check confidence

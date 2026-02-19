@@ -1,13 +1,13 @@
 import os
 import time
-from mock_engine import GoldenGateMock
+from mock_engine import SentryNodeGateway
 
 def run_public_demo():
     # Initialize the Mock Engine (Your Public Interface)
-    gateway = GoldenGateMock()
+    gateway = SentryNodeGateway()
     
     print("="*50)
-    print("🌉 GOLDENGATE AI: PUBLIC GOVERNANCE DEMO")
+    print("🌉 SentryNodeGateway: PUBLIC GOVERNANCE DEMO")
     print("="*50)
     
     # Scenario A: Standard Efficiency Task
