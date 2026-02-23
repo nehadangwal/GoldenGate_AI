@@ -46,7 +46,7 @@ Quality Parity	        N/A	                      98% Semantic Match	        Zero
 
 ![SentryNode Efficiency Gain](./ai_cost_savings.png)
 
-```
+```mermaid
 graph TD
   A[Agent Request] --> B{SentryNode Gateway}
   B -- High Complexity --> C[Frontier LLM]
