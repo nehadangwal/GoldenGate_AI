@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SentryNode Gateway — Tearsheet</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0A0D12;
+    --slate: #1C2233;
+    --steel: #2E3A52;
+    --ghost: #8B95A8;
+    --bone: #F4F2EE;
+    --paper: #FAFAF8;
+    --accent: #00C2A8;
+    --accent2: #FF5C35;
+    --gold: #F5B800;
+    --line: rgba(255,255,255,0.07);
+  }
+
+  html { font-size: 14px; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  /* ── LAYOUT ── */
+  .page {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 48px 40px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 24px;
+    padding-bottom: 32px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 36px;
+  }
+
+  .wordmark {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .logo-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--ink);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .logo-icon svg { display: block; }
+
+  .company-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--ghost);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding-left: 52px;
+  }
+
+  .header-meta {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+
+  .patent-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--ink);
+    color: white;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+
+  .patent-badge .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .contact-line {
+    font-size: 0.75rem;
+    color: var(--ghost);
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ── HERO STAT ROW ── */
+  .hero-strip {
+    background: var(--ink);
+    border-radius: 12px;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-strip::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(0,194,168,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .stat-block {
+    padding: 0 24px;
+    border-right: 1px solid var(--line);
+    position: relative;
+  }
+  .stat-block:first-child { padding-left: 0; }
+  .stat-block:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-num .accent { color: var(--accent); }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--ghost);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* ── BODY GRID ── */
+  .body-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 28px;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ghost);
+    margin-bottom: 10px;
+  }
+
+  /* ── PROBLEM / SOLUTION ── */
+  .ps-card {
+    background: var(--bone);
+    border-radius: 10px;
+    padding: 24px;
+  }
+
+  .problem-block {
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .ps-heading {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ps-heading .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    padding: 2px 7px;
+    border-radius: 3px;
+    letter-spacing: 0.08em;
+  }
+
+  .tag-problem { background: rgba(255,92,53,0.12); color: var(--accent2); }
+  .tag-solution { background: rgba(0,194,168,0.12); color: var(--accent); }
+
+  .ps-body {
+    font-size: 0.82rem;
+    color: #3A4055;
+    line-height: 1.6;
+  }
+
+  /* ── CAPABILITIES ── */
+  .cap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .cap-item {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 8px;
+    padding: 14px;
+  }
+
+  .cap-icon {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .cap-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  .cap-desc {
+    font-size: 0.73rem;
+    color: var(--ghost);
+    line-height: 1.45;
+  }
+
+  /* ── RIGHT COLUMN ── */
+  .right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  /* ── BENCHMARK TABLE ── */
+  .bench-card {
+    background: var(--ink);
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+  }
+
+  .bench-card .section-label { color: rgba(255,255,255,0.35); }
+
+  .bench-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.78rem;
+  }
+
+  .bench-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .bench-metric { color: rgba(255,255,255,0.6); }
+
+  .bench-val {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+  }
+
+  .bench-val.positive { color: var(--accent); }
+  .bench-val.highlight { color: var(--gold); }
+
+  /* ── ARCHITECTURE CARD ── */
+  .arch-card {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .arch-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 10px;
+  }
+
+  .arch-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
+    padding: 7px 10px;
+    border-radius: 6px;
+  }
+
+  .arch-step.active { background: rgba(0,194,168,0.07); }
+
+  .arch-step-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--ghost);
+    width: 16px;
+    flex-shrink: 0;
+  }
+
+  .arch-step-label { color: var(--ink); flex: 1; }
+
+  .arch-step-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.06em;
+  }
+
+  .badge-slm { background: rgba(0,194,168,0.12); color: var(--accent); }
+  .badge-frontier { background: rgba(245,184,0,0.12); color: #B8860B; }
+  .badge-guard { background: rgba(255,92,53,0.12); color: var(--accent2); }
+  .badge-crypto { background: rgba(100,100,255,0.1); color: #5555CC; }
+
+  .arch-arrow {
+    text-align: center;
+    color: rgba(0,0,0,0.15);
+    font-size: 0.65rem;
+    line-height: 1;
+    padding: 1px 0 1px 26px;
+  }
+
+  /* ── ROADMAP ── */
+  .roadmap-card {
+    background: var(--bone);
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .epoch-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+  }
+
+  .epoch-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--ghost);
+    width: 56px;
+    flex-shrink: 0;
+  }
+
+  .epoch-bar-wrap {
+    flex: 1;
+    height: 6px;
+    background: rgba(0,0,0,0.08);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .epoch-bar {
+    height: 100%;
+    border-radius: 3px;
+    background: var(--accent);
+  }
+
+  .epoch-pct {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--ink);
+    width: 30px;
+    text-align: right;
+  }
+
+  .epoch-name {
+    font-size: 0.72rem;
+    color: var(--ink);
+    flex: 1.2;
+    line-height: 1.3;
+  }
+
+  /* ── BOTTOM ROW ── */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .use-case-card {
+    border: 1.5px solid var(--ink);
+    border-radius: 10px;
+    padding: 18px;
+  }
+
+  .uc-industry {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ghost);
+    margin-bottom: 6px;
+  }
+
+  .uc-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+
+  .uc-body {
+    font-size: 0.73rem;
+    color: #5A6175;
+    line-height: 1.45;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+  }
+
+  .footer-ask {
+    background: var(--accent);
+    border-radius: 8px;
+    padding: 14px 22px;
+    text-align: center;
+  }
+
+  .footer-ask-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.5);
+    margin-bottom: 2px;
+  }
+
+  .footer-ask-amount {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.03em;
+  }
+
+  .footer-links {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--ghost);
+    line-height: 1.9;
+  }
+
+  .footer-links a {
+    color: var(--ink);
+    text-decoration: none;
+    display: block;
+  }
+
+  .footer-contact {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    line-height: 1.9;
+    color: var(--ghost);
+    text-align: right;
+  }
+
+  .footer-contact strong {
+    color: var(--ink);
+    display: block;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  /* print */
+  @media print {
+    body { background: white; }
+    .page { padding: 24px 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="wordmark">
+      <div class="logo-row">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M11 2L3 6V11C3 15.42 6.47 19.57 11 21C15.53 19.57 19 15.42 19 11V6L11 2Z" fill="none" stroke="#00C2A8" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M8 11L10 13L14 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="company-name">SentryNode Gateway</span>
+      </div>
+      <div class="tagline">Semantic Security Layer for Autonomous Agents</div>
+    </div>
+    <div class="header-meta">
+      <div class="patent-badge"><span class="dot"></span> U.S. Patent Pending · #63/982,542</div>
+      <div class="contact-line">Filed February 13, 2026 · Apache 2.0 Licensed</div>
+      <div class="contact-line">github.com/nehadangwal/sentrynode-gateway</div>
+    </div>
+  </header>
+
+  <!-- HERO STATS -->
+  <div class="hero-strip">
+    <div class="stat-block">
+      <div class="stat-num"><span class="accent">77.6</span>%</div>
+      <div class="stat-label">Cost reduction<br>per 1k requests</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">80<span style="font-size:1.4rem;color:var(--ghost)">%</span></div>
+      <div class="stat-label">Requests offloaded<br>to SLM vs frontier</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">98<span style="font-size:1.4rem;color:var(--ghost)">%</span></div>
+      <div class="stat-label">Quality parity<br>semantic match</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num"><span class="accent">100</span>%</div>
+      <div class="stat-label">Agentic loops<br>intercepted</div>
+    </div>
+  </div>
+
+  <!-- BODY GRID -->
+  <div class="body-grid">
+
+    <!-- LEFT COL -->
+    <div class="left-col">
+
+      <!-- Problem / Solution -->
+      <div class="section-label">The Problem & Solution</div>
+      <div class="ps-card" style="margin-bottom: 18px;">
+        <div class="problem-block">
+          <div class="ps-heading">
+            <span class="tag tag-problem">PROBLEM</span>
+            The AI Tax
+          </div>
+          <div class="ps-body">
+            In 2026, 80% of enterprise AI spend is waste — frontier models handling low-complexity tasks. Without a governance layer, autonomous agents spiral into recursive loops that can exhaust a month's cloud budget in minutes. There is no mediation layer between your engineering team and LLM providers.
+          </div>
+        </div>
+        <div>
+          <div class="ps-heading">
+            <span class="tag tag-solution">SOLUTION</span>
+            The Golden Path
+          </div>
+          <div class="ps-body">
+            SentryNode is a high-performance semantic gateway that enforces intelligent routing, hard budget guardrails, and cryptographic provenance on every AI request — ensuring frontier intelligence is reserved only for tasks that require it.
+          </div>
+        </div>
+      </div>
+
+      <!-- Capabilities -->
+      <div class="section-label">Core Capabilities</div>
+      <div class="cap-grid">
+        <div class="cap-item">
+          <span class="cap-icon">⚡</span>
+          <div class="cap-title">Adaptive Inference Routing</div>
+          <div class="cap-desc">SLM-first strategy automatically offloads routine tasks, reserving frontier models for complex reasoning.</div>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">🔁</span>
+          <div class="cap-title">Semantic Circuit Breaker</div>
+          <div class="cap-desc">Sub-second recursive loop detection via Redis state matching. Kills agentic drift before it exhausts budgets.</div>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">👁️</span>
+          <div class="cap-title">Shadow Mode Validation</div>
+          <div class="cap-desc">Parallel quality checks between SLM and frontier model ensure zero degradation at 98% cost reduction.</div>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">🔐</span>
+          <div class="cap-title">Sovereign Signatures</div>
+          <div class="cap-desc">HMAC-SHA256 cryptographic enforcement on every response. 100% provenance — no model spoofing possible.</div>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">🛡️</span>
+          <div class="cap-title">Sidecar Sandbox (SAE)</div>
+          <div class="cap-desc">gVisor kernel-level isolation for agent-generated code. Cgroups v2 fiscal guardrails prevent ghost compute bills.</div>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">📊</span>
+          <div class="cap-title">FinOps Ledger</div>
+          <div class="cap-desc">Real-time cost avoidance calculation per request, per user. Redis-backed audit trail with immediate ROI visibility.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COL -->
+    <div class="right-col">
+
+      <!-- Benchmark -->
+      <div class="bench-card">
+        <div class="section-label">Validated Benchmarks · 1,000 Requests</div>
+        <div class="bench-row">
+          <span class="bench-metric">Cost per 1k (Direct)</span>
+          <span class="bench-val" style="color:rgba(255,255,255,0.4);">$5.00</span>
+        </div>
+        <div class="bench-row">
+          <span class="bench-metric">Cost per 1k (SentryNode)</span>
+          <span class="bench-val positive">$1.12</span>
+        </div>
+        <div class="bench-row">
+          <span class="bench-metric">Efficiency Gain</span>
+          <span class="bench-val highlight">77.6% reduction</span>
+        </div>
+        <div class="bench-row">
+          <span class="bench-metric">SLM Offload Rate</span>
+          <span class="bench-val positive">80%</span>
+        </div>
+        <div class="bench-row">
+          <span class="bench-metric">Semantic Quality Match</span>
+          <span class="bench-val positive">98%</span>
+        </div>
+        <div class="bench-row">
+          <span class="bench-metric">Loops Intercepted</span>
+          <span class="bench-val positive">100%</span>
+        </div>
+      </div>
+
+      <!-- Architecture Flow -->
+      <div class="arch-card">
+        <div class="section-label">Request Flow Architecture</div>
+        <div class="arch-flow">
+          <div class="arch-step">
+            <span class="arch-step-num">01</span>
+            <span class="arch-step-label">Inbound Agent Request</span>
+            <span class="arch-step-badge badge-guard">GATEWAY</span>
+          </div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-step active">
+            <span class="arch-step-num">02</span>
+            <span class="arch-step-label">Complexity Scoring</span>
+            <span class="arch-step-badge badge-guard">CIRCUIT BREAK</span>
+          </div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-step">
+            <span class="arch-step-num">03</span>
+            <span class="arch-step-label">Route: SLM or Frontier</span>
+            <span class="arch-step-badge badge-slm">ADAPTIVE</span>
+          </div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-step">
+            <span class="arch-step-num">04</span>
+            <span class="arch-step-label">Shadow Mode Parity Check</span>
+            <span class="arch-step-badge badge-frontier">VALIDATE</span>
+          </div>
+          <div class="arch-arrow">↓</div>
+          <div class="arch-step active">
+            <span class="arch-step-num">05</span>
+            <span class="arch-step-label">HMAC Sign + FinOps Log</span>
+            <span class="arch-step-badge badge-crypto">SOVEREIGN</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Roadmap -->
+      <div class="roadmap-card">
+        <div class="section-label">Development Epochs</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
+          <div class="epoch-row">
+            <span class="epoch-label">Epoch 1</span>
+            <span class="epoch-name">Foundational Framework</span>
+            <div class="epoch-bar-wrap"><div class="epoch-bar" style="width:100%;background:var(--accent);"></div></div>
+            <span class="epoch-pct">100%</span>
+          </div>
+          <div class="epoch-row">
+            <span class="epoch-label">Epoch 2</span>
+            <span class="epoch-name">Quality & Governance</span>
+            <div class="epoch-bar-wrap"><div class="epoch-bar" style="width:98%;background:var(--gold);"></div></div>
+            <span class="epoch-pct">98%</span>
+          </div>
+          <div class="epoch-row">
+            <span class="epoch-label">Epoch 3</span>
+            <span class="epoch-name">Enterprise Sovereignty</span>
+            <div class="epoch-bar-wrap"><div class="epoch-bar" style="width:85%;background:var(--accent2);"></div></div>
+            <span class="epoch-pct">85%</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- USE CASES -->
+  <div class="section-label" style="margin-bottom:12px;">Target Design Partners</div>
+  <div class="bottom-grid" style="margin-bottom: 28px;">
+    <div class="use-case-card">
+      <div class="uc-industry">FinTech / Banking</div>
+      <div class="uc-title">Agentic Compliance Workflows</div>
+      <div class="uc-body">Document review and regulatory summarization pipelines running 10k+ requests/day — SentryNode cuts LLM spend while ensuring cryptographic audit trails for compliance.</div>
+    </div>
+    <div class="use-case-card">
+      <div class="uc-industry">Enterprise SaaS</div>
+      <div class="uc-title">Multi-Tenant AI Features</div>
+      <div class="uc-body">SaaS platforms embedding AI features for thousands of customers face runaway token costs. SentryNode's per-user FinOps ledger enables chargeback and budget enforcement at scale.</div>
+    </div>
+    <div class="use-case-card">
+      <div class="uc-industry">DevOps / Platform Eng</div>
+      <div class="uc-title">Code Agent Execution</div>
+      <div class="uc-body">AI coding agents require sandboxed execution with kernel isolation. SentryNode's gVisor SAE layer and circuit breakers prevent infinite loops from creating ghost compute bills.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-links">
+      <span style="font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ghost);">Research & Links</span>
+      <a href="https://medium.com/@nehadangwal/the-ai-tax-is-breaking-engineering-margins-a-17m-perspective-on-finops-7fce44983866">The AI Tax: A $17M FinOps Perspective ↗</a>
+      <a href="https://medium.com/@nehadangwal/the-sovereign-agent-why-naked-ai-execution-is-an-enterprise-liability-f4f31a116493">The Sovereign Agent: Why Naked AI is a Liability ↗</a>
+      <a href="https://github.com/nehadangwal/sentrynode-gateway">github.com/nehadangwal/sentrynode-gateway ↗</a>
+    </div>
+
+    <div class="footer-ask">
+      <div class="footer-ask-label">Design Partner Pilot</div>
+      <div class="footer-ask-amount">Now Open</div>
+      <div style="font-family:'DM Mono',monospace;font-size:0.6rem;color:rgba(0,0,0,0.45);margin-top:2px;">Q2 2026 cohort</div>
+    </div>
+
+    <div class="footer-contact">
+      <strong>Neha Dangwal</strong>
+      Founder · SentryNode Gateway
+      <br>
+      <a href="mailto:neha.sentrynode@gmail.com" style="color:var(--ink); text-decoration:none;">neha.sentrynode@gmail.com</a>
+      <br>
+      U.S. Patent Pending #63/982,542
+      <br>
+      Apache 2.0 · gVisor · FastAPI · Redis
+      <br><br>
+      <span style="color:var(--ink);">linkedin.com/in/nehadangwal</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
+
+</div>
+</body>
+</html>
