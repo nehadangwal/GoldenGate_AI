@@ -40,5 +40,6 @@ operator who has scaled a B2B product from 0→1.
 
 
 **U.S. Patent Pending · #63/982,542 · Filed February 13, 2026**  
-[linkedin.com/in/nehadangwal](https://linkedin.com/in/nehadangwal) · 
+[linkedin.com/in/nehadangwal](https://linkedin.com/in/nehadangwal) 
+
 [github.com/nehadangwal/sentrynode-gateway](https://github.com/nehadangwal/sentrynode-gateway)
