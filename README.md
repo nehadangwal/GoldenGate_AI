@@ -84,6 +84,7 @@ SentryNode isn't just a gateway; it's a financial architecture for the agentic e
 * **[Architecture Deep-Dive](./ARCHITECTURE.md)**: Detailed system schematics and component interaction maps.
 
 👤 About the Founder
+
 Neha Dangwal | Founder, SentryNode Gateway 
 Neha is an AI Infrastructure Architect at the intersection of FinOps and Agentic Security. 
 She built SentryNode to solve the dual crisis of runaway token costs and unverifiable model provenance.
