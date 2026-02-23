@@ -81,6 +81,12 @@ Epoch 3: Enterprise Sovereignty (85%)
 SentryNode isn't just a gateway; it's a financial architecture for the agentic era.
 * **[Executive Summary](./EXECUTIVE_SUMMARY.md)**: The high-level business case for dismantling the "AI Tax" and achieving $17M+ ROI.
 * **[Research Pillars](./RESEARCH_PILLARS.md)**: Technical deep-dive into Adaptive Routing, Shadow Mode, and Unit Economics.
+* **[Architecture Deep-Dive](./ARCHITECTURE.md)**: Detailed system schematics and component interaction maps.
+
+👤 About the Founder
+Neha Dangwal | Founder, SentryNode Gateway Neha is an AI Infrastructure Architect at the intersection of FinOps and Agentic Security. She built SentryNode to solve the dual crisis of runaway token costs and unverifiable model provenance.
+**[Read Full Founder Bio](./FOUNDER.md)**
+🤝 Partner Search: Seeking a Technical Co-Founder to own GTM and infrastructure scaling. Contact via LinkedIn.
 
 🛠️ Public Framework Architecture
 This repository provides the Interface Specifications and Benchmarking Suite for the SentryNode ecosystem.
