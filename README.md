@@ -194,8 +194,6 @@ curl -X GET http://localhost:8000/api/v1/admin/kill-switch/audit-log \
 **Published Research:**
 - [The AI Tax: A $17M Perspective on FinOps](https://medium.com/@nehadangwal/the-ai-tax-is-breaking-engineering-margins-a-17m-perspective-on-finops-7fce44983866)
 - [The Sovereign Agent: Why Naked AI Execution is an Enterprise Liability](https://medium.com/@nehadangwal/the-sovereign-agent-why-naked-ai-execution-is-an-enterprise-liability-f4f31a116493)
-- [The Architecture of Caution](https://nehadangwal.substack.com/p/the-architecture-of-caution-engineering)
-- [Inside the 77.6% Savings](https://nehadangwal.substack.com/p/deep-dive-inside-goldengate-ai-how)
 
 ---
 
