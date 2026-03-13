@@ -41,7 +41,6 @@ SentryNode acts as the strategic mediation layer between agentic applications an
 - **Adaptive Routing** — Automatically offloads routine tasks to cost-efficient models, reserving frontier intelligence for complex reasoning
 - **Shadow Mode Mirroring** — Background-validates output quality to ensure 98.2% semantic parity with zero capability loss
 - **Semantic Circuit Breakers** — Intercepts recursive agentic loops within 40ms before they reach the model provider
-- **Hard Governance** — Real-time budget enforcement, kill switch, and tamper-proof audit ledger
 - **Sovereign Signatures** — Every response cryptographically signed for full model provenance
 
 ---
@@ -157,29 +156,9 @@ ROI Multiplier:         12.5x (Claim 112)
 | `/health` | GET | Gateway health — Python-native monitoring |
 | `/api/v1/chat` | POST | Governed agentic chat |
 | `/api/v1/admin/report/{user_id}` | GET | Sovereign Trust Report |
-| `/api/v1/admin/kill-switch` | POST | Emergency gateway override |
 
 ---
 
-## 🛡️ Governance Operations
-
-### Emergency Kill Switch
-Immediately freeze all agentic traffic in the event of a security breach or cost spike:
-```bash
-# Disable gateway — blocks all requests with 503
-curl -X POST 'http://localhost:8000/api/v1/admin/kill-switch?action=disable&reason=Urgent_Cost_Audit' \
-  -H "Authorization: Bearer <token>"
-
-# Restore service
-curl -X POST 'http://localhost:8000/api/v1/admin/kill-switch?action=enable&reason=Audit_Complete' \
-  -H "Authorization: Bearer <token>"
-
-# Audit kill switch ledger
-curl -X GET http://localhost:8000/api/v1/admin/kill-switch/audit-log \
-  -H "Authorization: Bearer <token>"
-```
-
----
 
 ## 📖 Research & Documentation
 
