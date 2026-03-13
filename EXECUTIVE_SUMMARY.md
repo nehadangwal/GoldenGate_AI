@@ -18,7 +18,6 @@ SentryNode acts as the strategic mediation layer between agentic applications an
 
 * Adaptive Inference Routing: Automatically offloads routine tasks to SLMs, reserving frontier models for complex reasoning.
 * Semantic Circuit Breakers: Real-time interception of recursive agent loops within 40ms — verified under adversarial conditions (Claim 4).
-* Kill Switch & Audit Log: Emergency gateway shutdown with a full tamper-proof ledger — mandatable by security teams, auditable by compliance.
 * Hardened Sidecar Sandbox: Kernel-level isolation via gVisor + Cgroups v2 fiscal guardrails. Prevents both container breakouts and ghost compute bills.
 * HMAC-SHA256 Sovereign Signatures: Every response cryptographically signed — full model provenance for legal and compliance teams.
 
