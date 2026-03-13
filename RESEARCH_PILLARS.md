@@ -25,7 +25,6 @@ The critical metric in 2026 is Cost Per Successful Task.
 * Atomic Tracking: Individual request savings logged in real time (e.g., $0.00390 saved per prompt) to provide live ROI dashboards via the Sovereign Ledger.
 12.5x ROI Multiplier: The governance layer pays for itself — verified under production-equivalent workloads (Claim 112).
 * Semantic Circuit Breakers: Recursive agentic loops identified and terminated within 40ms — validated under adversarial attack simulation. Prevents Ghost Bills and infinite spend scenarios (Claim 4).
-* Kill Switch & Audit Log: Emergency gateway shutdown with tamper-proof ledger. Blocks all traffic with 503 status. Fully auditable — enable/disable with full event history preserved.
 * Implementation: Execute test_guardrails.py to see recursive loop detection and termination live.
 
 Pillar 4: Sovereign Security Architecture
