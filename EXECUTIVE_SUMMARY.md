@@ -1,7 +1,5 @@
 Executive Summary: SentryNode Gateway
-
 U.S. Patent Pending #63/982,542 | Founder: Neha Dangwal
-
 🛡️ The Mission
 SentryNode is the architectural response to the crisis of agentic scale. In 2026, Generative AI is an infrastructure problem disguised as a software feature. Without a rigorous FinOps framework, AI initiatives become liabilities rather than assets. SentryNode provides the mediation layer required to align technical sovereignty with capital efficiency.
 📉 The Challenge: The "AI Tax"
@@ -20,7 +18,7 @@ Hardened Sidecar Sandbox: Kernel-level isolation via gVisor + Cgroups v2 fiscal 
 HMAC-SHA256 Sovereign Signatures: Every response cryptographically signed — full model provenance for legal and compliance teams.
 
 📊 Validated ROI — Verified March 2026
-In a simulated adversarial stress test and mixed-complexity workload of 1,000 requests:
+In a validated benchmark of 1,000 mixed-complexity requests using 2026 pricing tiers, with adversarial loop and rate-limit attack simulation:
 
 77.6% Cost Reduction — unit costs from $5.00 → $1.12 per 1k requests
 80% Offload Rate — routine tasks routed away from frontier models
@@ -30,4 +28,5 @@ In a simulated adversarial stress test and mixed-complexity workload of 1,000 re
 40ms loop interception — semantic circuit breaker validated under recursive attack
 
 🤝 The Ask: Design Partner Pilot — Q2 2026
-We are opening 2 Design Partner slots for enterprise teams building agentic workflows who require hard budget guardrails, cryptographic provenance, and audit-ready governance. If your team is past first deployment and the cost curve is already uncomfortable — that's the conversation.
+SentryNode is opening 2 Design Partner slots for enterprise teams building agentic workflows who require hard budget guardrails, cryptographic provenance, and audit-ready governance. If your team is past first deployment and the cost curve is already uncomfortable — that's the conversation.
+📩 neha.sentrynode@gmail.com · linkedin.com/in/nehadangwal
