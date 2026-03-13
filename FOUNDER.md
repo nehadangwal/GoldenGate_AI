@@ -1,4 +1,3 @@
-
 👤 About the Founder
 Neha Dangwal
 Founder, SentryNode Gateway
@@ -17,7 +16,7 @@ Adaptive routing, Shadow Mode, Semantic Circuit Breakers — all live
 Kill switch, HMAC provenance, Redis sovereign ledger — all operational
 Benchmarks stress-tested under adversarial conditions
 
-The technical risk is largely retired. The next phase is market.
+The technical foundation is in place. The next phase is market.
 The Co-Founder I'm Looking For
 Neha is seeking a Business Co-Founder — someone who leads the commercial side of a company, not someone who reads the codebase.
 What you own:
@@ -39,9 +38,10 @@ What you're walking into:
 A working, patent-pending product with verified benchmarks
 A $5–7B annual waste problem growing at 35% CAGR
 A founder with deep technical credibility and enterprise operating history
-Zero revenue today — this is a 0→1 commercial build
+Design partner conversations open for Q2 2026 — this is a 0→1 commercial build
 
 The architecture is done. The market is real. The missing piece is someone who can open doors.
+
 U.S. Patent Pending · #63/982,542 · Filed February 13, 2026
-linkedin.com/in/nehadangwal 
-github.com/nehadangwal/sentrynode-gateway
+Last updated: March 2026
+linkedin.com/in/nehadangwal · github.com/nehadangwal/sentrynode-gateway
