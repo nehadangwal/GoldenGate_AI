@@ -1,47 +1,47 @@
 ```mermaid
 graph TB
-    subgraph Client_Layer [Agentic Application]
+    subgraph Client_Layer ["🌐 Agentic Application"]
         A[Agent / User Request]
     end
-    subgraph SentryNode_Core [SentryNode Gateway Layer]
-        B{Adaptive Router}
-        C[Semantic Circuit Breaker]
-        D[FinOps Ledger]
-        E[Shadow Mode Engine]
-    end
-    subgraph Model_Tier [Intelligence Layer]
-        F[Frontier Model: GPT-4o/Claude]
-        G[Optimized SLM: Llama 4/Mistral]
-    end
-    subgraph Security_Tier [Sovereign Execution]
-        H[gVisor Hardened Sandbox]
-        I[HMAC Signing Service]
-    end
-    subgraph Output_Layer [Client Response]
-        J[Verified Secure Response]
-        K[Request Blocked — Loop Intercepted]
+
+    subgraph Gateway_Layer ["🛡️ Governance & Routing Layer\nPatent Pending · U.S. #63/982,542"]
+        B[Cost Governance]
+        C[Quality Assurance]
+        D[Security Enforcement]
     end
 
-    %% Workflow Connections
-    A --> B
-    B -- "High Reasoning" --> F
-    B -- "Routine / Low Complexity" --> G
+    subgraph Intelligence_Layer ["🧠 Intelligence Layer"]
+        E[Adaptive Model Selection\n77.6% cost reduction · 98.2% quality parity]
+    end
 
-    %% Governance Loop
-    B --> C
-    C -->|Loop Detected — Block| K
-    C -->|Loop Detected — Log| D
+    subgraph Sovereign_Layer ["🔒 Sovereign Execution Layer"]
+        F[Hardened Execution Environment\nCryptographic Provenance · Kernel Isolation]
+    end
 
-    %% Shadow Mode Parity
-    G --> E
-    F -.->|Parity Check| E
+    subgraph Output_Layer ["📤 Client Response"]
+        G["✅ Verified · Audited · Governed"]
+        H["❌ Threat Intercepted"]
+    end
 
-    %% Final Output Path — both models flow through Shadow then Sandbox
-    F --> E
-    E --> H
-    H --> I
-    I --> J
+    %% ── High-level flow only ───────────────────────────
+    A --> Gateway_Layer
+    Gateway_Layer --> Intelligence_Layer
+    Intelligence_Layer --> Sovereign_Layer
+    Sovereign_Layer --> G
+    Gateway_Layer -->|"Threat Detected"| H
 
-    %% FinOps Reporting
-    I --> D
-```
+    %% ── Styling ────────────────────────────────────────
+    classDef gateway fill:#EEEDFE,stroke:#534AB7,color:#26215C
+    classDef intel fill:#E6F1FB,stroke:#185FA5,color:#042C53
+    classDef sovereign fill:#FAECE7,stroke:#993C1D,color:#4A1B0C
+    classDef output_ok fill:#EAF3DE,stroke:#3B6D11,color:#173404
+    classDef output_block fill:#FCEBEB,stroke:#A32D2D,color:#501313
+    classDef client fill:#F1EFE8,stroke:#5F5E5A,color:#2C2C2A
+
+    class B,C,D gateway
+    class E intel
+    class F sovereign
+    class G output_ok
+    class H output_block
+    class A client
+    ```
