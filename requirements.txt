@@ -1,4 +1,7 @@
+# SentryNode Gateway — Public Interface Dependencies
+# Note: Core inference routing and sovereign engine dependencies
+# are maintained in the private production environment.
+
 fastapi
 pydantic
-litellm
 uvicorn

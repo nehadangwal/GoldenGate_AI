@@ -8,19 +8,12 @@ services:
       - "8001:8001"
     environment:
       - MOCK_MODE=true
-      - REDIS_HOST=sentrynode_cache
-    depends_on:
-      - sentrynode_cache
     networks:
       - sentry_network
 
-  # The FinOps Ledger & State Cache
-  sentrynode_cache:
-    image: "redis:alpine"
-    ports:
-      - "6379:6379"
-    networks:
-      - sentry_network
+# Note: Sovereign state management and ledger infrastructure
+# are configured in the private production environment.
+# Contact neha.sentrynode@gmail.com for enterprise deployment docs.
 
 networks:
   sentry_network:
