@@ -74,6 +74,7 @@ SentryNode implements a Sidecar Sandbox model to ensure agent-generated code nev
 - **Environment Awareness** — Automatically detects host OS to apply appropriate security tiers
 - **Sovereign Signatures** — HMAC-SHA256 cryptographic enforcement on every response
 
+*"SentryNode isn't just a tool; it's a technical implementation of the 2026 FinOps Standard."*
 ---
 
 ## 🗺️ Strategic Roadmap
