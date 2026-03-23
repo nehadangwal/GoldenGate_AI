@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SentryNode Gateway | Hard Benchmark | FinOps 2026</title>
+<title>SentryNode Gateway | FinOps 2026 Executive Audit</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -11,16 +11,17 @@
     --accent: #00e5ff; --accent2: #ff6b35; --warn: #ff3b3b;
     --green: #00ff88; --text: #c9d1d9; --muted: #6e7681; --heading: #ffffff;
   }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; line-height: 1.5; }
+  
   body::before {
     content: ''; position: fixed; inset: 0;
     background-image: linear-gradient(rgba(0,229,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,0.02) 1px, transparent 1px);
-    background-size: 30px 30px; pointer-events: none;
+    background-size: 30px 30px; pointer-events: none; z-index: 0;
   }
+
   .container { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 60px 24px; }
-  
-  /* Header */
   .header { margin-bottom: 48px; }
   .badge {
     display: inline-flex; align-items: center; gap: 8px; background: rgba(0,229,255,0.1); border: 1px solid rgba(0,229,255,0.3);
@@ -29,63 +30,79 @@
   h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; color: var(--heading); line-height: 1; margin-bottom: 12px; }
   .tagline { font-size: 18px; color: var(--muted); font-weight: 400; }
 
-  /* Sections */
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 40px; margin-bottom: 28px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
   .card-title { font-size: 12px; font-family: 'DM Mono'; color: var(--accent); text-transform: uppercase; margin-bottom: 32px; letter-spacing: 0.2em; display: flex; align-items: center; gap: 10px; }
   .card-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-  /* Grid & Inputs */
   .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 20px; }
   .field { display: flex; flex-direction: column; gap: 8px; }
   label { font-size: 14px; font-weight: 700; color: var(--heading); }
-  .hint { font-size: 12px; color: var(--muted); font-weight: 400; line-height: 1.2; margin-bottom: 4px; }
+  .hint { font-size: 12px; color: var(--muted); line-height: 1.2; margin-bottom: 4px; }
+  
   input[type="number"], select {
     width: 100%; background: #161b22; border: 1px solid var(--border); border-radius: 8px;
-    padding: 14px; font-family: 'DM Mono'; font-size: 15px; color: #fff; outline: none; transition: border 0.2s;
+    padding: 14px; font-family: 'DM Mono'; font-size: 15px; color: #fff; outline: none;
   }
-  input:focus { border-color: var(--accent); }
 
   .slider-row { display: flex; align-items: center; gap: 20px; margin-top: 10px; }
-  input[type="range"] { flex: 1; accent-color: var(--accent); }
+  input[type="range"] { flex: 1; accent-color: var(--accent); cursor: pointer; }
   .slider-val { font-family: 'DM Mono'; color: var(--accent); font-weight: 500; font-size: 18px; }
 
-  /* Results Table */
   .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
-  .stat-box { background: #161b22; border: 1px solid var(--border); border-radius: 8px; padding: 24px; text-align: left; }
+  .stat-box { background: #161b22; border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
   .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; font-family: 'DM Mono'; }
   .stat-value { font-size: 26px; font-weight: 800; color: var(--heading); }
-  .stat-box.highlight { border-color: var(--green); }
-  .stat-box.highlight .stat-value { color: var(--green); }
 
-  /* Comparison Visuals */
   .vis-container { margin: 32px 0; }
-  .vis-row { margin-bottom: 20px; }
   .vis-meta { display: flex; justify-content: space-between; font-family: 'DM Mono'; font-size: 12px; margin-bottom: 8px; }
   .bar-track { height: 12px; background: #0d1117; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); }
   .bar-fill { height: 100%; transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
   .bar-fill.red { background: linear-gradient(90deg, #ff3b3b, #ff6b35); }
   .bar-fill.blue { background: linear-gradient(90deg, #00e5ff, #00ff88); }
 
-  /* Risk Surface Benchmarks */
-  .risk-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .risk-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; padding: 20px; position: relative; }
-  .risk-card span { position: absolute; top: 20px; right: 20px; font-size: 20px; }
-  .risk-card h4 { font-family: 'DM Mono'; font-size: 13px; color: var(--accent2); text-transform: uppercase; margin-bottom: 8px; }
-  .risk-card p { font-size: 13px; color: var(--text); opacity: 0.8; line-height: 1.4; }
-
-  /* Summary Banner */
   .banner { background: var(--green); color: #000; padding: 32px; border-radius: 12px; text-align: center; margin-top: 20px; }
   .banner h2 { font-size: 48px; font-weight: 800; letter-spacing: -0.03em; }
-  .banner p { font-family: 'DM Mono'; font-weight: 500; font-size: 14px; text-transform: uppercase; }
+  
+  .risk-list { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .risk-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; padding: 20px; }
+  .risk-card h4 { font-family: 'DM Mono'; font-size: 13px; color: var(--accent2); text-transform: uppercase; margin-bottom: 8px; }
+  .risk-card p { font-size: 13px; opacity: 0.8; }
 
-  /* Footer/CTA */
-  .cta { text-align: center; margin-top: 60px; }
-  .btn { display: inline-block; padding: 18px 36px; border-radius: 8px; font-weight: 700; text-decoration: none; transition: 0.2s; cursor: pointer; border: none; }
+  .btn { display: inline-block; padding: 18px 36px; border-radius: 8px; font-weight: 700; text-decoration: none; cursor: pointer; border: none; transition: 0.2s; }
   .btn-main { background: var(--accent); color: #000; margin-right: 12px; }
   .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); font-family: 'Syne'; }
-  .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,229,255,0.2); }
 
-  @media (max-width: 768px) { .input-grid, .stats-row, .risk-list { grid-template-columns: 1fr; } }
+  .print-only { display: none; }
+
+  /* --- PDF EXPORT ENGINE --- */
+  @media print {
+    @page { size: A4; margin: 1.5cm; }
+    body { background: white !important; color: #111 !important; }
+    body::before, .slider-row, .btn, .hint, select, input, .badge, .card-title::after { display: none !important; }
+    
+    .container { padding: 0; width: 100%; }
+    .card { background: #fff !important; border: 1px solid #ddd !important; box-shadow: none !important; padding: 20px; margin-bottom: 15px; page-break-inside: avoid; }
+    
+    .header { border-bottom: 2px solid #000; padding-bottom: 20px; }
+    h1 { color: #000 !important; font-size: 28px; }
+    h1 span { color: #000 !important; text-decoration: underline; }
+    
+    .print-only { display: block !important; font-family: 'DM Mono'; font-size: 14px; font-weight: bold; margin-top: 5px; color: #000; }
+    .stat-box { background: #f5f5f5 !important; border: 1px solid #ccc !important; }
+    .stat-value, .stat-label { color: #000 !important; }
+    
+    .risk-list { grid-template-columns: 1fr !important; }
+    .risk-card { border: 1px solid #eee !important; background: #fff !important; color: #333 !important; }
+    .risk-card h4 { color: #d32f2f !important; }
+
+    .banner { background: #000 !important; color: #fff !important; border: none !important; }
+    .banner h2 { color: #fff !important; font-size: 36px; }
+
+    .vis-meta { color: #000 !important; }
+    .bar-track { background: #eee !important; border: 1px solid #ccc !important; }
+    .bar-fill.red { background: #666 !important; }
+    .bar-fill.blue { background: #000 !important; }
+  }
 </style>
 </head>
 <body>
@@ -95,6 +112,7 @@
     <div class="badge">🛡️ SentryNode Gateway · Patent Pending #63/982,542</div>
     <h1>Stop the <span>AI Tax</span>: LLM Governance for 2026</h1>
     <p class="tagline">Architecting Technical Sovereignty & FinOps Alignment.</p>
+    <div class="print-only" style="margin-top: 20px; font-size: 10px; text-transform: uppercase; color: #666;">Confidential Financial Audit: Audit ID SN-2026-XP4</div>
   </header>
 
   <section class="card">
@@ -104,35 +122,37 @@
         <label>Monthly LLM API Spend</label>
         <div class="hint">Current invoice from OpenAI / Anthropic / Gemini</div>
         <input type="number" id="monthlySpend" value="8000" oninput="calculate()">
+        <div class="print-only" id="p-monthly">$8,000 / month</div>
       </div>
       <div class="field">
         <label>Primary Model in Use</label>
-        <div class="hint">The frontier model driving most of your cost</div>
+        <div class="hint">Frontier tier driving cost</div>
         <select id="modelTier" onchange="calculate()">
-          <option value="0.030">GPT-4o ($0.030/1K tokens)</option>
+          <option value="0.030">GPT-4o ($0.030/1K)</option>
           <option value="0.015" selected>Claude 3.5 Sonnet ($0.015/1K)</option>
           <option value="0.075">GPT-4 Turbo ($0.075/1K)</option>
-          <option value="0.008">Claude 3 Haiku ($0.008/1K)</option>
           <option value="0.007">Gemini 1.5 Pro ($0.007/1K)</option>
         </select>
+        <div class="print-only" id="p-model">Claude 3.5 Sonnet</div>
       </div>
       <div class="field">
         <label>Active Agentic Workflows</label>
-        <div class="hint">Autonomous agents / pipelines in production</div>
         <input type="number" id="agents" value="3" oninput="calculate()">
+        <div class="print-only" id="p-agents">3 Active Agent Pipelines</div>
       </div>
       <div class="field">
         <label>Team Size (Engineers)</label>
-        <div class="hint">Engineers building or consuming LLM features</div>
         <input type="number" id="teamSize" value="12" oninput="calculate()">
+        <div class="print-only" id="p-team">12-Engineer Deployment</div>
       </div>
       <div class="field" style="grid-column: 1 / -1;">
         <label>Estimated Routine Task %</label>
-        <div class="hint">Tasks not requiring frontier reasoning (formatting, summarization, classification)</div>
+        <div class="hint">Tasks offloadable to local SLMs via Gateway</div>
         <div class="slider-row">
-          <input type="range" id="routineSlider" min="10" max="95" value="65" oninput="calculate()">
-          <span class="slider-val" id="sliderDisplay">65%</span>
+          <input type="range" id="routineSlider" min="10" max="95" value="66" oninput="calculate()">
+          <span class="slider-val" id="sliderDisplay">66%</span>
         </div>
+        <div class="print-only" id="p-routine" style="color:#d32f2f">66% Logic Parity (Offload Potential)</div>
       </div>
     </div>
   </section>
@@ -143,68 +163,49 @@
       <div class="stat-box">
         <div class="stat-label">Current Annual Burn</div>
         <div class="stat-value" id="currAnn">$96,000</div>
-        <div class="hint" style="margin-top:4px">Ungoverned spend</div>
       </div>
-      <div class="stat-box highlight">
+      <div class="stat-box">
         <div class="stat-label">SentryNode Gateway Annual</div>
-        <div class="stat-value" id="govAnn">$44,678</div>
-        <div class="hint" style="margin-top:4px; color: var(--green)">After adaptive routing</div>
+        <div class="stat-value" id="govAnn" style="color:var(--green)">$43,830</div>
       </div>
       <div class="stat-box">
         <div class="stat-label">ROI Multiplier</div>
-        <div class="stat-value" id="roiMult">2.1x</div>
-        <div class="hint" style="margin-top:4px">Aligned with Value Realization</div>
+        <div class="stat-value" id="roiMult">2.2x</div>
       </div>
     </div>
 
     <div class="vis-container">
       <div class="vis-row">
-        <div class="vis-meta"><span>Ungoverned</span><span id="labelUngov">$8,000/mo</span></div>
+        <div class="vis-meta"><span>Ungoverned Spend Profile</span><span id="labelUngov">$8,000/mo</span></div>
         <div class="bar-track"><div class="bar-fill red" style="width: 100%"></div></div>
       </div>
       <div class="vis-row">
-        <div class="vis-meta"><span>SentryNode Gateway</span><span id="labelGov" style="color:var(--green)">$3,723/mo</span></div>
-        <div class="bar-track"><div class="bar-fill blue" id="barGov" style="width: 46%"></div></div>
+        <div class="vis-meta"><span>SentryNode Gateway (Governed)</span><span id="labelGov" style="color:var(--green)">$3,652/mo</span></div>
+        <div class="bar-track"><div class="bar-fill blue" id="barGov" style="width: 45%"></div></div>
       </div>
     </div>
 
     <div class="banner">
       <p>Net Capital Retained Annually</p>
-      <h2 id="annSavings">$51,322</h2>
-      <p id="perEng" style="margin-top:10px">That's $4,277/engineer/yr back in budget</p>
+      <h2 id="annSavings">$52,170</h2>
+      <p id="perEng" style="margin-top:10px">That's $4,348/engineer/yr back in budget</p>
     </div>
   </section>
 
   <section class="card">
-    <div class="card-title">// 03 · Agentic Risk Surface (Your Profile)</div>
+    <div class="card-title">// 03 · Agentic Risk Surface (Audited Benchmarks)</div>
     <div class="risk-list">
-      <div class="risk-card">
-        <span>⚡</span>
-        <h4>Agentic Drift Risk</h4>
-        <p id="riskAgents">3 active agents with no circuit breaker. A single recursive loop can exhaust weeks of budget in minutes.</p>
-      </div>
-      <div class="risk-card">
-        <span>🔥</span>
-        <h4>Frontier Overuse</h4>
-        <p id="riskOveruse">65% routine tasks hitting expensive frontier models. Shadow Mode can validate SLM parity safely.</p>
-      </div>
-      <div class="risk-card">
-        <span>📊</span>
-        <h4>No Spend Ceiling</h4>
-        <p id="riskCeiling">At $8,000/mo you have no hard budget enforcement. One rogue pipeline = board-level incident.</p>
-      </div>
-      <div class="risk-card">
-        <span>🔍</span>
-        <h4>No Sovereign Audit Trail</h4>
-        <p id="riskAudit">12 engineers generating LLM calls with zero cryptographic provenance. Compliance exposure grows with team size.</p>
-      </div>
+      <div class="risk-card"><h4>⚡ Agentic Drift Risk</h4><p id="riskAgents">3 active agents with no circuit breaker. A single recursive loop can exhaust weeks of budget in minutes.</p></div>
+      <div class="risk-card"><h4>🔥 Frontier Overuse</h4><p id="riskOveruse">66% routine tasks hitting expensive frontier models. Shadow Mode can validate SLM parity safely.</p></div>
+      <div class="risk-card"><h4>📊 No Spend Ceiling</h4><p id="riskCeiling">At $8,000/mo you have no hard budget enforcement. One rogue pipeline = board-level incident.</p></div>
+      <div class="risk-card"><h4>🔍 No Sovereign Audit Trail</h4><p id="riskAudit">12 engineers generating LLM calls with zero cryptographic provenance. Compliance exposure grows with team size.</p></div>
     </div>
   </section>
 
-  <div class="cta">
+  <div class="cta" style="text-align: center;">
     <a href="https://calendly.com/neha-sentrynode/diagnostic" class="btn btn-main">→ Book Free Diagnostic</a>
     <button onclick="window.print()" class="btn btn-outline">Export CFO Report (PDF)</button>
-    <p style="margin-top: 30px; font-family: 'DM Mono'; font-size: 11px; color: var(--muted);">SentryNode Gateway · Aligned with FinOps Framework 2026 · Patent Pending #63/982,542</p>
+    <p style="margin-top: 30px; font-family: 'DM Mono'; font-size: 11px; color: var(--muted);">SentryNode Gateway · Aligned with March 2026 FinOps Update</p>
   </div>
 </div>
 
@@ -216,27 +217,36 @@
     const routine = parseFloat(document.getElementById('routineSlider').value) / 100;
     const team = parseInt(document.getElementById('teamSize').value) || 1;
     const agents = parseInt(document.getElementById('agents').value) || 0;
+    const modelElem = document.getElementById('modelTier');
+    const modelName = modelElem.options[modelElem.selectedIndex].text.split(' (')[0];
 
+    // Updates Visual Displays
     document.getElementById('sliderDisplay').textContent = Math.round(routine * 100) + '%';
+    document.getElementById('p-routine').textContent = Math.round(routine * 100) + '% Logic Parity (Offload Potential)';
 
-    // Calculation Logic
-    // SentryNode reduces routine costs by 85% via SLM routing, but adds a 4% gateway governance overhead
+    // Core Logic: 85% discount for routine tasks, 4% gateway governance overhead
     const governedMonthly = ((monthly * (1 - routine)) + (monthly * routine * 0.15)) * 1.04;
     const annualSavings = (monthly - governedMonthly) * 12;
 
-    // Update Stats
+    // Update Numerical Fields
     document.getElementById('currAnn').textContent = fmt(monthly * 12);
     document.getElementById('govAnn').textContent = fmt(governedMonthly * 12);
     document.getElementById('roiMult').textContent = (monthly / governedMonthly).toFixed(1) + 'x';
     document.getElementById('annSavings').textContent = fmt(annualSavings);
-    document.getElementById('perEng').textContent = `That's ${fmt(annualSavings / team)}/engineer/yr back in your engineering budget`;
-
-    // Update Visuals
+    document.getElementById('perEng').textContent = `That's ${fmt(annualSavings / team)}/engineer/yr back in budget`;
+    
+    // Bar Logic
     document.getElementById('labelUngov').textContent = fmt(monthly) + '/mo';
     document.getElementById('labelGov').textContent = fmt(governedMonthly) + '/mo';
     document.getElementById('barGov').style.width = (governedMonthly / monthly * 100) + '%';
 
-    // Update Risks Dynamic Text
+    // Update PDF Static Fields
+    document.getElementById('p-monthly').textContent = fmt(monthly) + " / month";
+    document.getElementById('p-model').textContent = modelName;
+    document.getElementById('p-agents').textContent = agents + " Active Agent Pipelines";
+    document.getElementById('p-team').textContent = team + "-Engineer Deployment";
+
+    // Update Benchmarks
     document.getElementById('riskAgents').textContent = `${agents} active agents with no circuit breaker. A single recursive loop can exhaust weeks of budget in minutes.`;
     document.getElementById('riskOveruse').textContent = `${Math.round(routine * 100)}% routine tasks hitting expensive frontier models. Shadow Mode can validate SLM parity safely.`;
     document.getElementById('riskCeiling').textContent = `At ${fmt(monthly)}/mo you have no hard budget enforcement. One rogue pipeline = board-level incident.`;
@@ -244,6 +254,5 @@
   }
   calculate();
 </script>
-
 </body>
 </html>
