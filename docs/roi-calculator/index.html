@@ -3,91 +3,89 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SentryNode Gateway | FinOps Framework 2026 | Stop the AI Tax</title>
-<meta name="description" content="SentryNode Gateway: The first AI Governance layer aligned with the March 2026 FinOps Framework. Transition from Cloud Cost to Value Realization.">
-
+<title>SentryNode Gateway | FinOps Framework 2026 | LLM Governance</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #080c10;
-    --surface: #0d1117;
-    --border: #1e2d3d;
-    --accent: #00e5ff;
-    --accent2: #ff6b35;
-    --warn: #ff3b3b;
-    --green: #00ff88;
-    --text: #c9d1d9;
-    --muted: #556575;
-    --heading: #e6edf3;
+    --bg: #080c10; --surface: #0d1117; --border: #1e2d3d;
+    --accent: #00e5ff; --accent2: #ff6b35; --warn: #ff3b3b;
+    --green: #00ff88; --text: #c9d1d9; --muted: #556575; --heading: #e6edf3;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; overflow-x: hidden; }
-
-  /* Grid bg */
+  body { background: var(--bg); color: var(--text); font-family: 'Syne', sans-serif; min-height: 100vh; }
   body::before {
     content: ''; position: fixed; inset: 0;
     background-image: linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
-    background-size: 40px 40px; pointer-events: none; z-index: 0;
+    background-size: 40px 40px; pointer-events: none;
   }
-
-  .container { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 48px 24px 80px; }
-  .header { text-align: center; margin-bottom: 56px; }
-
+  .container { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 48px 24px; }
+  
+  /* Header */
+  .header { text-align: center; margin-bottom: 40px; }
   .badge {
     display: inline-flex; align-items: center; gap: 8px; background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.2);
-    border-radius: 4px; padding: 6px 14px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent);
-    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px;
+    border-radius: 4px; padding: 6px 14px; font-family: 'DM Mono'; font-size: 11px; color: var(--accent); text-transform: uppercase; margin-bottom: 20px;
   }
-
-  h1 { font-size: clamp(32px, 6vw, 52px); font-weight: 800; color: var(--heading); line-height: 1.1; margin-bottom: 16px; }
+  h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; color: var(--heading); line-height: 1.1; margin-bottom: 12px; }
   h1 span { color: var(--accent); }
-  .subtitle { font-size: 16px; color: var(--muted); max-width: 600px; margin: 0 auto; line-height: 1.6; }
 
+  /* Cards */
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-bottom: 24px; position: relative; }
-  .card-title { font-size: 11px; font-family: 'DM Mono', monospace; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 24px; }
+  .card-title { font-size: 11px; font-family: 'DM Mono'; color: var(--muted); text-transform: uppercase; margin-bottom: 24px; letter-spacing: 0.1em; }
 
-  /* Framework Box */
-  .framework-box {
-    background: rgba(0, 229, 255, 0.03); border-left: 3px solid var(--accent); padding: 20px; margin-bottom: 24px; border-radius: 0 8px 8px 0;
-  }
-  .framework-box h3 { font-size: 14px; color: var(--heading); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
-  .framework-box p { font-size: 13px; color: var(--text); opacity: 0.8; line-height: 1.5; }
-
-  .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  @media (max-width: 600px) { .input-grid { grid-template-columns: 1fr; } }
-
+  /* Inputs */
+  .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 20px; }
   .field { display: flex; flex-direction: column; gap: 8px; }
-  label { font-size: 13px; font-weight: 700; }
+  label { font-size: 13px; font-weight: 700; color: var(--text); }
+  .hint { font-size: 11px; color: var(--muted); font-weight: 400; }
   input[type="number"], select {
-    width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 6px;
+    width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 8px;
     padding: 12px; font-family: 'DM Mono'; font-size: 14px; color: #fff; outline: none;
   }
+  .slider-row { display: flex; align-items: center; gap: 15px; margin-top: 10px; }
+  input[type="range"] { flex: 1; cursor: pointer; accent-color: var(--accent); }
+  .slider-val { font-family: 'DM Mono'; color: var(--accent); min-width: 40px; }
 
-  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
-  .metric { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 8px; padding: 20px; text-align: center; }
+  /* Results */
+  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+  .metric { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center; }
   .metric-label { font-size: 10px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; }
   .metric-value { font-size: 24px; font-weight: 800; color: var(--heading); }
+  .metric.highlight .metric-value { color: var(--green); }
+  .metric.danger .metric-value { color: var(--warn); }
 
+  /* Comparison Bars */
+  .comparison { margin: 24px 0; }
+  .comp-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .comp-label { font-size: 11px; color: var(--muted); width: 100px; font-family: 'DM Mono'; }
+  .bar-track { flex: 1; height: 10px; background: rgba(255,255,255,0.05); border-radius: 5px; overflow: hidden; }
+  .bar-fill { height: 100%; transition: width 0.6s ease; }
+  .bar-fill.ungov { background: var(--warn); }
+  .bar-fill.gov { background: var(--green); }
+  .comp-val { font-family: 'DM Mono'; font-size: 12px; width: 80px; text-align: right; }
+
+  /* Banner */
   .savings-banner {
     background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(0,229,255,0.05));
-    border: 1px solid rgba(0,255,136,0.2); border-radius: 12px; padding: 32px; text-align: center;
+    border: 1px solid rgba(0,255,136,0.25); border-radius: 12px; padding: 32px; text-align: center;
   }
-  .savings-amount { font-size: 48px; font-weight: 800; color: var(--green); margin-bottom: 8px; }
+  .savings-amount { font-size: 52px; font-weight: 800; color: var(--green); text-shadow: 0 0 30px rgba(0,255,136,0.2); }
 
+  /* Risks */
   .risk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .risk-item { display: flex; gap: 10px; padding: 15px; background: rgba(255,107,53,0.05); border: 1px solid rgba(255,107,53,0.1); border-radius: 8px; font-size: 12px; }
+  .risk-item { display: flex; gap: 12px; padding: 16px; background: rgba(255,107,53,0.05); border: 1px solid rgba(255,107,53,0.15); border-radius: 8px; font-size: 12px; }
+  .risk-item strong { display: block; color: var(--accent2); text-transform: uppercase; margin-bottom: 4px; font-family: 'DM Mono'; }
 
-  .btn-primary { background: var(--accent); color: #000; font-weight: 700; padding: 14px 28px; border-radius: 8px; text-decoration: none; display: inline-block; margin: 10px; }
-  .btn-secondary { border: 1px solid var(--border); color: var(--text); padding: 14px 28px; border-radius: 8px; text-decoration: none; display: inline-block; margin: 10px; background: transparent; cursor: pointer; }
+  /* Buttons */
+  .btn-primary { background: var(--accent); color: #000; font-weight: 700; padding: 14px 28px; border-radius: 8px; text-decoration: none; display: inline-block; margin: 10px; transition: transform 0.2s; }
+  .btn-secondary { border: 1px solid var(--border); color: var(--text); padding: 14px 28px; border-radius: 8px; text-decoration: none; display: inline-block; margin: 10px; background: transparent; cursor: pointer; font-family: 'Syne'; font-weight: 700; }
+  .btn-primary:hover { transform: translateY(-2px); }
 
   @media print {
     body { background: white; color: black; }
-    body::before, .input-grid, .btn-primary, .btn-secondary, .card-title, input, select { display: none !important; }
-    .card, .savings-banner, .metric, .framework-box { border: 1px solid #ddd !important; background: white !important; page-break-inside: avoid; }
-    .framework-box { border-left: 5px solid black !important; }
-    h1, .metric-value, .savings-amount { color: black !important; }
+    body::before, .input-grid, .btn-primary, .btn-secondary, .card-title { display: none !important; }
+    .card, .savings-banner, .metric { border: 1px solid #ddd !important; background: white !important; page-break-inside: avoid; }
+    h1, .metric-value, .savings-amount { color: black !important; text-shadow: none !important; }
   }
 </style>
 </head>
@@ -97,66 +95,79 @@
   <div class="header">
     <div class="badge">🏛️ FinOps Framework 2026 Aligned</div>
     <h1>Stop the <span>AI Tax</span> with SentryNode Gateway</h1>
-    <p class="subtitle">Transition from "Cloud Cost" to <strong>Value Realization</strong>. Architected for the March 2026 FinOps Update.</p>
+    <p class="subtitle" style="margin-top:10px; opacity:0.8;">Intercept Agentic Drift. Realize Value. Eliminate Overkill.</p>
   </div>
 
   <div class="card">
-    <div class="card-title">// 01 · FinOps 2026 Spend Profile</div>
+    <div class="card-title">// 01 · FinOps Input Parameters</div>
     <div class="input-grid">
       <div class="field">
-        <label>Monthly LLM Invoice</label>
+        <label>Monthly LLM Spend <span class="hint">(Current)</span></label>
         <input type="number" id="monthlySpend" value="8000" oninput="calculate()">
       </div>
       <div class="field">
-        <label>Model Intelligence Tier</label>
+        <label>Model Tier</label>
         <select id="modelTier" onchange="calculate()">
-            <option value="0.015">Claude 3.5 (Frontier)</option>
-            <option value="0.030">GPT-4o (Frontier)</option>
+          <option value="0.015">Claude 3.5 Sonnet</option>
+          <option value="0.030">GPT-4o</option>
+          <option value="0.060">GPT-4 Turbo</option>
         </select>
       </div>
       <div class="field">
-        <label>Engineering Team Size</label>
+        <label>Team Size</label>
         <input type="number" id="teamSize" value="12" oninput="calculate()">
       </div>
       <div class="field">
-        <label>Offloadable Routine Tasks (%)</label>
-        <input type="range" id="routineSlider" min="10" max="90" value="65" oninput="calculate()">
+        <label>Routine Task % <span class="hint">(Offloadable to SLM)</span></label>
+        <div class="slider-row">
+          <input type="range" id="routineSlider" min="10" max="95" value="65" oninput="calculate()">
+          <span class="slider-val" id="sliderVal">65%</span>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="card">
-    <div class="framework-box">
-      <h3>🏛️ Framework 2026 Alignment</h3>
-      <p>SentryNode Gateway satisfies the <strong>Value Realization</strong> pillar by intercepting agentic drift and re-routing "Intelligence Overkill" to cost-optimized SLMs.</p>
+    <div class="card-title">// 02 · Comparison & Value Realization</div>
+    <div class="results-grid">
+      <div class="metric danger">
+        <div class="metric-label">Annual Burn</div>
+        <div class="metric-value" id="currAnn">$96,000</div>
+      </div>
+      <div class="metric highlight">
+        <div class="metric-label">Governed Annual</div>
+        <div class="metric-value" id="govAnn">$21,600</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">ROI Multiplier</div>
+        <div class="metric-value" id="roiMult">4.4x</div>
+      </div>
     </div>
 
-    <div class="results-grid">
-      <div class="metric">
-        <div class="metric-label">Annual Burn</div>
-        <div class="metric-value" id="currentAnnual">$96,000</div>
+    <div class="comparison">
+      <div class="comp-row">
+        <span class="comp-label">Ungoverned</span>
+        <div class="bar-track"><div class="bar-fill ungov" style="width: 100%"></div></div>
+        <span class="comp-val" id="barUngovVal">$8,000</span>
       </div>
-      <div class="metric">
-        <div class="metric-label">Governed Annual</div>
-        <div class="metric-value" id="governedAnnual">$21,600</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Value Multiplier</div>
-        <div class="metric-value" id="roiMultiplier">4.4x</div>
+      <div class="comp-row">
+        <span class="comp-label">SentryNode</span>
+        <div class="bar-track"><div class="bar-fill gov" id="barGovWidth" style="width: 25%"></div></div>
+        <span class="comp-val" id="barGovVal" style="color:var(--green)">$1,800</span>
       </div>
     </div>
 
     <div class="savings-banner">
-      <div class="savings-amount" id="annualSavings">$74,400</div>
-      <p id="perEng" style="font-family: 'DM Mono'; font-size: 14px; color: var(--muted);">Net Capital Retained Annually</p>
+      <div class="savings-amount" id="annSave">$74,400</div>
+      <p id="perEng" style="font-family: 'DM Mono'; font-size: 14px; color: var(--muted); margin-top: 10px;">$6,200/engineer/yr back in budget</p>
     </div>
   </div>
 
   <div class="card">
-    <div class="card-title">// 03 · Risk Surface Analysis</div>
+    <div class="card-title">// 03 · 2026 Framework Risk Analysis</div>
     <div class="risk-grid">
-      <div class="risk-item"><strong>Recursive Loop Protection</strong>Circuit breaker active for agentic workflows.</div>
-      <div class="risk-item"><strong>Semantic Routing</strong>Automated offload to Sovereign SLMs.</div>
+      <div class="risk-item"><span>⚠️</span><div><strong>Agentic Drift</strong>Recursive loops in autonomous agents posing infinite budget risk.</div></div>
+      <div class="risk-item"><span>🏛️</span><div><strong>Framework Alignment</strong>Satisfies the "Value Realization" pillar of the March 2026 update.</div></div>
     </div>
   </div>
 
@@ -173,13 +184,22 @@
     const monthly = parseFloat(document.getElementById('monthlySpend').value) || 0;
     const routine = parseFloat(document.getElementById('routineSlider').value) / 100;
     const team = parseInt(document.getElementById('teamSize').value) || 1;
-    const governed = monthly * ((1 - routine) + routine * 0.15) * 1.04;
+    
+    document.getElementById('sliderVal').textContent = Math.round(routine * 100) + '%';
+    
+    // Logic: Routine tasks cost 85% less on SLMs via SentryNode Gateway
+    const governedMonthly = (monthly * (1 - routine)) + (monthly * routine * 0.15);
+    const savings = (monthly - governedMonthly) * 12;
 
-    document.getElementById('currentAnnual').textContent = '$' + Math.round(monthly * 12).toLocaleString();
-    document.getElementById('governedAnnual').textContent = '$' + Math.round(governed * 12).toLocaleString();
-    document.getElementById('annualSavings').textContent = '$' + Math.round((monthly - governed) * 12).toLocaleString();
-    document.getElementById('roiMultiplier').textContent = (monthly/governed).toFixed(1) + 'x';
-    document.getElementById('perEng').textContent = '$' + Math.round(((monthly - governed) * 12) / team).toLocaleString() + '/engineer/yr Capital Retained';
+    document.getElementById('currAnn').textContent = '$' + Math.round(monthly * 12).toLocaleString();
+    document.getElementById('govAnn').textContent = '$' + Math.round(governedMonthly * 12).toLocaleString();
+    document.getElementById('roiMult').textContent = (monthly / governedMonthly).toFixed(1) + 'x';
+    document.getElementById('annSave').textContent = '$' + Math.round(savings).toLocaleString();
+    document.getElementById('perEng').textContent = '$' + Math.round(savings / team).toLocaleString() + '/engineer/yr Capital Retained';
+    
+    document.getElementById('barUngovVal').textContent = '$' + Math.round(monthly).toLocaleString();
+    document.getElementById('barGovVal').textContent = '$' + Math.round(governedMonthly).toLocaleString();
+    document.getElementById('barGovWidth').style.width = (governedMonthly / monthly * 100) + '%';
   }
   calculate();
 </script>
