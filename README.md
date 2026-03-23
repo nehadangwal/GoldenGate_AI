@@ -63,6 +63,9 @@ Running a mixed-complexity workload of 1,000 requests using 2026 pricing tiers:
 
 ---
 
+## 🏛️ Alignment with FinOps Framework 2026
+SentryNode is architected to satisfy the **March 2026 FinOps Framework Update**, specifically addressing the transition from "Cloud Cost" to "Value Realization."
+
 ## 🛡️ Secure Agentic Execution (SAE)
 SentryNode implements a Sidecar Sandbox model to ensure agent-generated code never runs "naked" on production hosts:
 
