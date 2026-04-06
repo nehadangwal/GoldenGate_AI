@@ -3,7 +3,7 @@ Executive Summary: SentryNode Gateway
 U.S. Patent Pending #63/982,542 | Founder: Neha Dangwal
 
 🛡️ The Mission
-SentryNode is the architectural response to the crisis of agentic scale. In 2026, Generative AI is an infrastructure problem disguised as a software feature. Without a rigorous FinOps framework, AI initiatives become liabilities rather than assets. SentryNode provides the mediation layer required to align technical sovereignty with capital efficiency.
+SentryNode Gateway is the architectural response to the crisis of agentic scale. In 2026, Generative AI is an infrastructure problem disguised as a software feature. Without a rigorous FinOps framework, AI initiatives become liabilities rather than assets. SentryNode Gateway provides the mediation layer required to align technical sovereignty with capital efficiency.
 
 📉 The Challenge: The "AI Tax"
 Enterprises face a dual crisis as they scale autonomous agents:
@@ -13,8 +13,8 @@ The Sovereignty Gap: "Naked" AI execution lacks provenance and security, leaving
 
 
 ⚡ The Solution: The "Golden Path"
-
-SentryNode acts as the strategic mediation layer between agentic applications and model providers. Our patent-pending architecture implements:
+**"SentryNode Gateway is delivered via an Enterprise-Hardened Engine (Proprietary), building upon our Open Core framework to provide sub-40ms circuit breaking and kernel-level isolation."**
+SentryNode Gateway acts as the strategic mediation layer between agentic applications and model providers. Our patent-pending architecture implements:
 
 * Adaptive Inference Routing: Automatically offloads routine tasks to SLMs, reserving frontier models for complex reasoning.
 * Semantic Circuit Breakers: Real-time interception of recursive agent loops within 40ms — verified under adversarial conditions (Claim 4).
@@ -34,7 +34,7 @@ In a validated benchmark of 1,000 mixed-complexity requests using 2026 pricing t
 
 🤝 The Ask: Design Partner Pilot — Accepting Now
 
-SentryNode is opening 2 Design Partner slots for enterprise teams building agentic workflows who require hard budget guardrails, cryptographic provenance, and audit-ready governance. 
+SentryNode Gateway is opening 2 Design Partner slots for enterprise teams building agentic workflows who require hard budget guardrails, cryptographic provenance, and audit-ready governance. 
 
 If your team is past first deployment and the cost curve is already uncomfortable — that's the conversation.
 
