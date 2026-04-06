@@ -37,6 +37,8 @@ Neha is a leading voice in **Inference-Level Sovereignty**, moving the conversat
 * **Community Validation:** Her research has reached **9,100+ impressions** in the past 90 days. She is a featured contributor in the **FinOps Connect** community, leading discussions on Agentic Unit Economics.
 
 * **The ROI Engine:** Creator of the **2026 AI Tax Calculator**, a public tool helping **AI companies** quantify "silent bleed" and move from "AI Demos" to **"Enterprise-ready Production."**
+
+* **Founder Ecosystem:** Actively participating in the YC Co-Founder Matching program, seeking a strategic partner to scale SentryNode Gateway’s Enterprise footprint and dismantle the "AI Tax" at a global level.
   
 * **The Philosophy:** "We are architecting the floor for the AI ceiling. Efficiency is the only moat that lasts."
 
