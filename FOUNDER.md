@@ -30,31 +30,6 @@ The core architecture is complete across two full development epochs:
 
 The technical foundation is in place. The next phase is market.
 
----
-
-## The Co-Founder I'm Looking For
-
-Neha is seeking a **Business Co-Founder** — someone who leads the commercial side of a company, not someone who reads the codebase.
-
-**What you own:**
-- Go-to-market strategy and enterprise sales motion
-- Design partner acquisition and relationship management
-- Fundraising narrative and investor conversations
-- Pricing, packaging, and revenue architecture
-
-**Ideal background:**
-- Enterprise B2B sales or GTM leader who has closed 6-figure deals
-- Former VC, operator, or Chief of Staff at a technical startup
-- Consultant or advisor who has taken a product from first revenue to Series A
-- Comfortable with technical concepts without needing to build them
-
-**What you're walking into:**
-- A working, patent-pending product with verified benchmarks
-- A $5–7B annual waste problem growing at 35% CAGR
-- A founder with deep technical credibility and enterprise operating history
-- Design partner conversations open for Q2 2026 — this is a 0→1 commercial build
-
-The architecture is done. The market is real. The missing piece is someone who can open doors.
 
 ---
 
