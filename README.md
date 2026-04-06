@@ -21,7 +21,7 @@ This repository contains the official open-access implementation of the SentryNo
 - **Semantic Circuit Breaker** — Recursive loop detection and sub-second interception (Claim 4)
 - **Sidecar Sandbox Execution** — Kernel-level isolation for agentic code
 
-> **Note:** This public repository contains the open-access framework and benchmarking suite. The proprietary routing engine, Semantic Decision Matrix, and Enterprise Sandbox configurations are maintained as private IP. For enterprise inquiries contact [neha.sentrynode@gmail.com](mailto:neha.sentrynode@gmail.com)
+> **Note:** This public repository contains the open-access framework and benchmarking suite. The proprietary routing engine, Semantic Decision Matrix, and Enterprise Sandbox configurations are maintained as private IP. For enterprise inquiries contact [neha.sentrynode.gateway@gmail.com](mailto:neha.sentrynode.gateway@gmail.com)
 
 ---
 
@@ -189,7 +189,7 @@ For inquiries regarding:
 - Enterprise Sandbox configurations
 - Design Partner Pilot — Q2 2026 (2 slots open)
 
-Contact: [neha.sentrynode@gmail.com](mailto:neha.sentrynode@gmail.com) · [linkedin.com/in/nehadangwal](https://linkedin.com/in/nehadangwal)
+Contact: [neha.sentrynode.gateway@gmail.com](mailto:neha.sentrynode@gmail.com) · [linkedin.com/in/nehadangwal](https://linkedin.com/in/nehadangwal)
 
 ---
 
