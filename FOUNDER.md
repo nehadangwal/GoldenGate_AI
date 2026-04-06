@@ -53,3 +53,4 @@ Neha is a leading voice in **Inference-Level Sovereignty**, moving the conversat
 
 
 *U.S. Patent Pending · #63/982,542 · Filed February 13, 2026*
+*© 2026 SentryNode Gateway · U.S. Patent Pending #63/982,542 · Enterprise Edition (Proprietary)*
