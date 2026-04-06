@@ -35,7 +35,9 @@ Neha founded SentryNode to dismantle the **"AI Tax"**—the 80% waste generated 
 Neha is a leading voice in **Inference-Level Sovereignty**, moving the conversation from "Model FOMO" to "Technical Sovereignty."
 
 * **Community Validation:** Her research has reached **9,100+ impressions** in the past 90 days. She is a featured contributor in the **FinOps Connect** community, leading discussions on Agentic Unit Economics.
-* **The ROI Engine:** Creator of the **2026 AI Tax Calculator**, a public tool that helps Series A/B teams quantify "silent bleed" and move from "AI Demos" to "Production Reality."
+
+* **The ROI Engine:** Creator of the **2026 AI Tax Calculator**, a public tool that helping **AI companies** quantify "silent bleed" and move from "AI Demos" to **"Enterprise-ready Production."**
+  
 * **The Philosophy:** "We are architecting the floor for the AI ceiling. Efficiency is the only moat that lasts."
 
 ---
