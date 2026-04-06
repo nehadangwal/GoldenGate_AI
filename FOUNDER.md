@@ -19,7 +19,7 @@ Neha is an AI Infrastructure Architect with 9 years of deep-stack engineering ex
 
 ## Technical Innovation: SentryNode Gateway
 
-Neha founded SentryNode to dismantle the **"AI Tax"**—the 80% waste generated when frontier models (like GPT-4o) are used for low-complexity tasks.
+Neha founded SentryNode Gateway to dismantle the **"AI Tax"**—the 80% waste generated when frontier models (like GPT-4o) are used for low-complexity tasks.
 
 ### Validated Milestones (April 2026):
 - **Patent-Pending Architecture:** Filed U.S. Patent #63/982,542 (Feb 13, 2026) for a novel Adaptive Inference Routing system.
