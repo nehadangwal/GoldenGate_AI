@@ -14,13 +14,13 @@ Neha is a "Systems-First" architect with 9 years of deep-stack engineering at **
 
 * **Cisco (Senior Software Engineer / Platform Product Owner):** Led platform strategy for cloud-based security infrastructure adopted by 80+ products. Managed feature alignment for Meraki and SaaS platforms supporting **11.5M+ active devices globally**, delivering **$15M+ in productivity gains**.
 * **Dell EMC (Senior Software Engineer):** Built Dell’s first on-prem GPU cloud service. Architected thermal and firmware systems that compressed hardware review cycles from weeks to seconds and refactored legacy systems to **reduce boot times by 44%**.
-* **The Transition:** Before founding SentryNode, she built **TrainOps Observatory**, a tool that identified hidden I/O bottlenecks in ML training, saving engineers an estimated **$15K/year per head** through simple 5-minute configuration fixes.
+* **The Transition:** Before founding SentryNode Gateway, she built **TrainOps Observatory**, a tool that identified hidden I/O bottlenecks in ML training, saving engineers an estimated **$15K/year per head** through simple 5-minute configuration fixes.
 
 
 
-## 🚀 The SentryNode Vision: Inference Governance
+## 🚀 The SentryNode Gateway Vision: Inference Governance
 
-Neha founded SentryNode to dismantle the **"AI Tax"**—the 80% waste generated when teams treat LLM APIs as "black boxes" rather than governed infrastructure.
+Neha founded SentryNode Gateway to dismantle the **"AI Tax"**—the 80% waste generated when teams treat LLM APIs as "black boxes" rather than governed infrastructure.
 
 ### Technical Milestones (U.S. Patent Pending #63/982,542):
 * **77.6% Cost Reduction:** Validated through 1,000-request stress tests, reducing costs from $5.00/1k requests to $1.12/1k requests.
