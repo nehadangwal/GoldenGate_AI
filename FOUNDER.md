@@ -3,57 +3,47 @@
 ## Neha Dangwal
 ### Founder & Architect, SentryNode Gateway
 
-> *"The metric that matters in 2026 isn't just Accuracy — it's Cost Per Successful Task."*
+> *"The metric that matters in 2026 isn't just Accuracy — it's Cost Per Successful Task. We are moving past the era of AI experimentation and into the era of Inference Governance."*
 
 ---
 
-## Background
+## Background & Enterprise Impact
 
-Neha is an AI Infrastructure Architect with 9 years of enterprise engineering experience at **Cisco** and **Dell** — building systems that operated at production scale before AI governance was a category.
+Neha is an AI Infrastructure Architect with 9 years of deep-stack engineering experience at **Cisco** and **Dell**. She specializes in the "Sovereign Golden Path"—building the governance layers that allow enterprise teams to scale AI without hitting a fiscal wall.
 
-At **Cisco**, she led platform strategy and product ownership for cloud-based infrastructure adopted by 80+ internal products, driving feature alignment across Meraki and Cisco SaaS platforms supporting **11.5M+ active devices globally**.
-
-At **Dell**, she architected firmware and thermal management systems, built Dell's first on-prem GPU cloud service, and led the Enterprise Server Portfolio memory testing program — contributing to work that compressed hardware review cycles from weeks to seconds at scale.
-
-Across both, that translated into **$17M+ in measurable impact** — cost reduction, platform reliability, and faster delivery cycles.
-
-That institutional background gave her direct visibility into a pattern that repeats at every AI-native company: teams move fast, the LLM bill arrives, and nobody can explain it. SentryNode Gateway is the governance layer she built to solve that problem.
+* **Cisco (Senior Software Engineer & Platform Product Owner):** Led platform strategy for cloud-based security infrastructure adopted by 80+ products. She managed feature alignment for Meraki and Cisco SaaS platforms, supporting **11.5M+ active devices globally**.
+* **Dell EMC (Senior Software Engineer):** Architected firmware and thermal systems that compressed hardware review cycles from weeks to seconds. She also built Dell’s first on-prem GPU cloud service using Kubernetes to enable scalable internal R&D.
+* **Measurable Results:** Across both firms, her leadership in performance optimization and infrastructure reliability translated into **$17M+ in measurable impact**.
 
 ---
 
-## What's Built
+## Technical Innovation: SentryNode Gateway
 
-The core architecture is production-ready across two full development epochs:
+Neha founded SentryNode to dismantle the **"AI Tax"**—the 80% waste generated when frontier models (like GPT-4o) are used for low-complexity tasks.
 
-- **Patent-pending architecture** filed and verified — U.S. #63/982,542 (February 13, 2026)
-- **Adaptive Inference Routing** — 77.6% LLM cost reduction, validated under adversarial conditions
-- **Shadow Mode Validation** — 98.2% semantic quality parity between SLM and frontier models
-- **Semantic Circuit Breakers** — 100% recursive loop interception, sub-second termination
-- **Sovereign Execution Layer** — cryptographic provenance on every AI response
-- **39-scenario stress test suite** — rate limiting, PII handling, budget circuit breaker, Redis ledger integrity
-
-The product is ready for pilot. The next phase is market.
+### Validated Milestones (April 2026):
+- **Patent-Pending Architecture:** Filed U.S. Patent #63/982,542 (Feb 13, 2026) for a novel Adaptive Inference Routing system.
+- **77.6% Cost Reduction:** Validated through 1,000-request stress tests, reducing costs from $5.00/1k requests to $1.12/1k requests while maintaining 98% quality parity.
+- **Shadow Mode Mirroring:** Built a real-time background comparison engine that "shadows" cost-optimized requests against frontier models to ensure zero quality degradation.
+- **Semantic Circuit Breakers:** Achieved 100% interception of recursive agentic loops with sub-second termination, preventing "ghost compute bills".
 
 ---
 
-## Research & Writing
+## Thought Leadership & Community Reach
 
-Neha publishes on AI infrastructure economics, LLM governance, and the unit economics of agentic systems. Her work has reached **9,000+ impressions** across the engineering and FinOps communities in the past 90 days.
+Neha is a leading voice in **LLM FinOps** and **Inference Governance**. In the past 90 days, her research and technical insights have gained **9,100+ impressions** across the engineering community, representing a **151% growth** in engagement.
 
-- [The AI Tax: A $17M FinOps Perspective](https://medium.com/@nehadangwal/the-ai-tax-is-breaking-engineering-margins-a-17m-perspective-on-finops-7fce44983866)
-- [The Sovereign Agent: Why Naked AI Execution is an Enterprise Liability](https://medium.com/@nehadangwal/the-sovereign-agent-why-naked-ai-execution-is-an-enterprise-liability-f4f31a116493)
-- [The FinOps of Generative AI — Whitepaper v1.5](https://github.com/nehadangwal/sentrynode-gateway/releases/tag/v1.5.0)
+* **"The AI Tax" Whitepaper:** A deep dive into the unit economics of agentic infrastructure and the transition from "shipping features" to "Technical Sovereignty."
+* **Featured Content:** Her frameworks on **Adaptive Inference** and **Sovereign Execution** have become benchmarks for Series A/B teams looking to audit AI infrastructure waste.
 
 ---
 
-## Connect
+## Connect & Collaborate
 
 **LinkedIn:** [linkedin.com/in/nehadangwal](https://linkedin.com/in/nehadangwal)  
 **GitHub:** [github.com/nehadangwal/sentrynode-gateway](https://github.com/nehadangwal/sentrynode-gateway)  
-**Email:** neha.sentrynode@gmail.com  
-**ROI Calculator:** [nehadangwal.github.io/sentrynode-gateway/roi-calculator](https://nehadangwal.github.io/sentrynode-gateway/roi-calculator)
+**Research:** [The AI Tax: A $17M FinOps Perspective](https://medium.com/@nehadangwal/the-ai-tax-is-breaking-engineering-margins-a-17m-perspective-on-finops-7fce44983866)  
+**Pilot Inquiry:** neha.sentrynode@gmail.com  
 
 ---
-
-*U.S. Patent Pending · #63/982,542 · Filed February 13, 2026*  
-*Last updated: April 2026*
+*U.S. Patent Pending · #63/982,542 · Filed February 13, 2026*
