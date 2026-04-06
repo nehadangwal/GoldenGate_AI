@@ -7,7 +7,7 @@
 [![Patent Pending](https://img.shields.io/badge/Patent-Pending%20%2363%2F982%2C542-purple.svg)]()
 [![Status: Active](https://img.shields.io/badge/Status-Active%20Development-green.svg)]()
 
-SentryNode is a high-performance governed gateway designed to eliminate the **"AI Tax."** As organizations scale autonomous agents, they face a dual crisis: unpredictable token costs and the security risks of unverified model execution. SentryNode implements Adaptive Inference and FinOps Guardrails to ensure every token spent translates to business value.
+SentryNode Gateway is a high-performance governed gateway designed to eliminate the **"AI Tax."** As organizations scale autonomous agents, they face a dual crisis: unpredictable token costs and the security risks of unverified model execution. SentryNode Gateway implements Adaptive Inference and FinOps Guardrails to ensure every token spent translates to business value.
 
 ---
 
@@ -36,7 +36,7 @@ Three things converged to make this a board-level crisis:
 ---
 
 ## 💡 The Solution: The "Golden Path"
-SentryNode acts as the strategic mediation layer between agentic applications and model providers:
+SentryNode Gateway acts as the strategic mediation layer between agentic applications and model providers:
 
 - **Adaptive Routing** — Automatically offloads routine tasks to cost-efficient models, reserving frontier intelligence for complex reasoning
 - **Shadow Mode Mirroring** — Background-validates output quality to ensure 98.2% semantic parity with zero capability loss
@@ -48,13 +48,19 @@ SentryNode acts as the strategic mediation layer between agentic applications an
 ## 📊 Validated Benchmarks (2026)
 Running a mixed-complexity workload of 1,000 requests using 2026 pricing tiers:
 
-| Metric | Ungoverned | SentryNode | Improvement |
-|--------|-----------|------------|-------------|
-| Cost per 1k Requests | $5.00 | $1.12 | **77.6% Reduction** |
-| Routing Strategy | Static / Frontier | Adaptive / SLM-First | **80% Offload** |
-| Circuit Breakers | None (Infinite Spend) | 100% Intercepted | **Risk: Eliminated** |
-| Quality Parity | N/A | 98.2% Semantic Match | **Zero Loss** |
-| ROI Multiplier | 1.0x | 12.5x | **Verified (Claim 112)** |
+|------------------------|----------------------|------------------------|--------------------------|
+| **Metric**             | **Ungoverned**       | **SentryNode Gateway** |   **Improvement**        |
+|------------------------|----------------------|------------------------|--------------------------|
+|  Cost per 1k Requests  |  $5.00               |    $1.12               |   **77.6% Reduction**    |
+|------------------------|----------------------|------------------------|--------------------------|
+|  Routing Strategy      | Static / Frontier    |   Adaptive / SLM-First |   **80% Offload**        |
+|------------------------|----------------------|------------------------|--------------------------|
+|  Circuit Breakers      | None (Infinite Spend)|   100% Intercepted     |   **Risk: Eliminated**   |
+|------------------------|----------------------|------------------------|--------------------------|
+|  Quality Parity        |   N/A                |   98.2% Semantic Match |   **Zero Loss**          | 
+|------------------------|----------------------|------------------------|--------------------------|
+|  ROI Multiplier        |   1.0x               |   12.5x                | **Verified (Claim 112)** |
+|------------------------|----------------------|------------------------|--------------------------|
 
 **Adversarial Validation — March 2026:**
 - 40ms semantic loop interception under recursive attack simulation
@@ -64,17 +70,17 @@ Running a mixed-complexity workload of 1,000 requests using 2026 pricing tiers:
 ---
 
 ## 🏛️ Alignment with FinOps Framework 2026
-SentryNode is architected to satisfy the **March 2026 FinOps Framework Update**, specifically addressing the transition from "Cloud Cost" to "Value Realization."
+SentryNode Gateway is architected to satisfy the **March 2026 FinOps Framework Update**, specifically addressing the transition from "Cloud Cost" to "Value Realization."
 
 ## 🛡️ Secure Agentic Execution (SAE)
-SentryNode implements a Sidecar Sandbox model to ensure agent-generated code never runs "naked" on production hosts:
+SentryNode Gateway implements a Sidecar Sandbox model to ensure agent-generated code never runs "naked" on production hosts:
 
 - **Kernel Isolation** — User-space kernel for agentic code execution, preventing container breakouts
 - **Fiscal Guardrails** — Resource caps to prevent Ghost Bills from infinite CPU-heavy loops
 - **Environment Awareness** — Automatically detects host OS to apply appropriate security tiers
 - **Sovereign Signatures** — HMAC-SHA256 cryptographic enforcement on every response
 
-*"SentryNode isn't just a tool; it's a technical implementation of the 2026 FinOps Standard."*
+*"SentryNode Gateway isn't just a tool; it's a technical implementation of the 2026 FinOps Standard."*
 ---
 
 ## 🗺️ Strategic Roadmap
@@ -141,14 +147,14 @@ python3 benchmark_report.py
 
 **Sample output:**
 ```
-📊 SentryNode Benchmark Report
-----------------------------------------
-Direct Frontier Cost:   $0.0500
-SentryNode Opt. Cost:   $0.0114
-Total Capital Saved:    $0.0386
-Efficiency Gain:        77.6% (Validated)
-ROI Multiplier:         12.5x (Claim 112)
-----------------------------------------
+📊 SentryNode Gateway           Benchmark Report
+------------------------------------------------
+Direct Frontier Cost:           $0.0500
+SentryNode Gateway Opt. Cost:   $0.0114
+Total Capital Saved:            $0.0386
+Efficiency Gain:                77.6% (Validated)
+ROI Multiplier:                 12.5x (Claim 112)
+-------------------------------------------------
 ```
 
 ---
@@ -185,7 +191,7 @@ ROI Multiplier:         12.5x (Claim 112)
 This public repository contains the **open-access framework and benchmarking tools.**
 
 For inquiries regarding:
-- SentryNode Proprietary Engine (Private IP)
+- SentryNode Gateway Proprietary Engine (Private IP)
 - Enterprise Sandbox configurations
 - Design Partner Pilot — Q2 2026 (2 slots open)
 
@@ -194,7 +200,7 @@ Contact: [neha.sentrynode.gateway@gmail.com](mailto:neha.sentrynode@gmail.com) �
 ---
 
 ## 🤝 Community & Feedback
-SentryNode is built on the principle of Architectural Sovereignty. Contributions welcome from AI Infrastructure engineers, FinOps practitioners, and Automation specialists.
+SentryNode Gateway is built on the principle of Architectural Sovereignty. Contributions welcome from AI Infrastructure engineers, FinOps practitioners, and Automation specialists.
 
 - **Found a bottleneck?** Open an issue using our performance template
 - **Design suggestion?** Join Discussions for Adaptive Routing edge cases
@@ -203,7 +209,7 @@ SentryNode is built on the principle of Architectural Sovereignty. Contributions
 ---
 
 ## 👤 About the Founder
-**Neha Dangwal** — 9 years at Cisco and Dell, $17M+ measurable impact, 11.5M+ devices. Built SentryNode to solve the AI governance problem she witnessed firsthand at scale.
+**Neha Dangwal** — 9 years at Cisco and Dell, $17M+ measurable impact, 11.5M+ devices. Built SentryNode Gateway to solve the AI governance problem she witnessed firsthand at scale.
 
 [Read full founder bio →](./FOUNDER.md)
 
