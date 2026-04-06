@@ -27,7 +27,6 @@
     background: var(--paper);
     color: var(--ink);
     font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
     line-height: 1.5;
     min-height: 100vh;
   }
@@ -49,174 +48,91 @@
     margin-bottom: 36px;
   }
 
-  .logo-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+  .logo-row { display: flex; align-items: center; gap: 12px; }
+  .logo-icon { width: 40px; height: 40px; background: var(--ink); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .company-name { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+  .tagline { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--ghost); letter-spacing: 0.12em; text-transform: uppercase; padding-left: 52px; margin-top: 4px;}
+  
+  .header-meta { text-align: right; display: flex; flex-direction: column; gap: 4px; align-items: flex-end; }
+  .patent-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--ink); color: white; font-family: 'DM Mono'; font-size: 0.65rem; padding: 5px 10px; border-radius: 4px; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
-  .logo-icon {
-    width: 40px; height: 40px;
-    background: var(--ink);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .company-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1;
-  }
-
-  .tagline {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--ghost);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding-left: 52px;
-    margin-top: 6px;
-  }
-
-  .header-meta { text-align: right; }
-  .patent-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--ink);
-    color: white;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    padding: 6px 12px;
-    border-radius: 4px;
-    margin-bottom: 8px;
-  }
-  .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
-
-  /* ── HERO STATS ── */
+  /* ── HERO STRIP ── */
   .hero-strip {
     background: var(--ink);
     border-radius: 12px;
     padding: 32px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin-bottom: 40px;
+    margin-bottom: 32px;
     color: white;
   }
-
   .stat-block { border-right: 1px solid rgba(255,255,255,0.1); padding: 0 20px; }
   .stat-block:last-child { border-right: none; }
-  .stat-num { font-family: 'Syne', sans-serif; font-size: 2.4rem; font-weight: 800; }
+  .stat-num { font-family: 'Syne'; font-size: 2.4rem; font-weight: 800; line-height: 1; }
   .stat-num span { color: var(--accent); }
-  .stat-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--ghost); text-transform: uppercase; margin-top: 4px; }
+  .stat-label { font-family: 'DM Mono'; font-size: 0.65rem; color: var(--ghost); text-transform: uppercase; margin-top: 6px; line-height: 1.3; }
 
-  /* ── MAIN CONTENT GRID ── */
-  .main-layout {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
-  }
+  /* ── LAYOUT ── */
+  .main-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; margin-bottom: 40px; }
+  .section-label { font-family: 'DM Mono'; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ghost); margin-bottom: 12px; display: block; }
 
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ghost);
-    margin-bottom: 12px;
-    display: block;
-  }
+  .ps-card { background: var(--bone); border-radius: 10px; padding: 24px; height: 100%; }
+  .ps-heading { font-family: 'Syne'; font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .tag { font-family: 'DM Mono'; font-size: 0.6rem; padding: 2px 7px; border-radius: 3px; }
+  .tag-problem { background: rgba(255,92,53,0.12); color: var(--accent2); }
+  .tag-solution { background: rgba(0,194,168,0.12); color: var(--accent); }
+  .ps-body { font-size: 0.85rem; color: #3A4055; line-height: 1.6; }
 
-  .ps-card { background: var(--bone); padding: 24px; border-radius: 12px; height: 100%; }
-  .ps-heading { font-family: 'Syne', sans-serif; font-weight: 700; margin-bottom: 8px; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
-  .tag { font-size: 0.6rem; padding: 2px 6px; border-radius: 3px; font-family: 'DM Mono'; }
-  .tag-problem { background: #ffe9e3; color: var(--accent2); }
-  .tag-solution { background: #e0f7f4; color: var(--accent); }
+  .bench-card { background: var(--ink); border-radius: 10px; padding: 20px; color: white; }
+  .bench-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 0.8rem; }
+  .bench-val { font-family: 'DM Mono'; font-weight: 500; }
+  .bench-val.positive { color: var(--accent); }
 
-  .bench-card { background: var(--ink); color: white; padding: 24px; border-radius: 12px; }
-  .bench-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; }
-  .bench-val.positive { color: var(--accent); font-family: 'DM Mono'; }
+  /* ── DESIGN PARTNERS (CENTERED) ── */
+  .centered-section { text-align: center; margin-bottom: 48px; }
+  .partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+  .partner-card { border: 1.5px solid var(--ink); border-radius: 10px; padding: 20px; text-align: left; background: white; }
+  .uc-industry { font-family: 'DM Mono'; font-size: 0.6rem; color: var(--ghost); text-transform: uppercase; margin-bottom: 6px; }
+  .uc-title { font-family: 'Syne'; font-weight: 700; font-size: 0.85rem; margin-bottom: 8px; }
+  .uc-body { font-size: 0.75rem; color: #5A6175; line-height: 1.5; }
 
-  /* ── DESIGN PARTNER TILES (CENTERED GRID) ── */
-  .partners-section {
-    padding: 40px 0;
-    border-top: 1px solid var(--line);
-    margin-top: 20px;
-  }
-
-  .partners-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-
-  .partner-card {
-    background: white;
-    border: 1px solid var(--line);
-    padding: 24px;
-    border-radius: 12px;
-    transition: transform 0.2s;
-  }
-
-  .partner-card:hover { transform: translateY(-4px); border-color: var(--accent); }
-  .partner-industry { font-family: 'DM Mono'; font-size: 0.6rem; color: var(--ghost); text-transform: uppercase; margin-bottom: 8px; }
-  .partner-title { font-family: 'Syne'; font-weight: 700; font-size: 1rem; margin-bottom: 10px; }
-  .partner-body { font-size: 0.8rem; color: #555; line-height: 1.5; }
-
-  /* ── CENTERED FOOTER ── */
-  .footer {
-    text-align: center;
+  /* ── FOOTER (RESTORED & CENTERED) ── */
+  .footer-container {
     border-top: 2px solid var(--ink);
-    padding-top: 50px;
-    margin-top: 20px;
+    padding-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
-  }
-
-  .footer-cta-box {
-    background: var(--accent);
-    padding: 32px;
-    border-radius: 16px;
-    width: 100%;
-    max-width: 600px;
-  }
-
-  .btn-primary {
-    display: inline-block;
-    background: var(--ink);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-family: 'DM Mono';
-    font-size: 0.8rem;
-    margin-top: 15px;
-  }
-
-  .footer-bottom {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 100%;
-    text-align: left;
     gap: 40px;
+  }
+
+  .footer-cta {
+    background: var(--accent);
+    border-radius: 12px;
+    padding: 24px 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+  }
+  .footer-cta h3 { font-family: 'Syne'; font-size: 1.5rem; font-weight: 800; margin: 4px 0 12px; }
+  .btn-black { display: inline-block; background: var(--ink); color: white; text-decoration: none; padding: 8px 18px; border-radius: 6px; font-family: 'DM Mono'; font-size: 0.7rem; }
+
+  .footer-links-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    width: 100%;
+    gap: 40px;
+    text-align: left;
     font-size: 0.75rem;
   }
+  .footer-links-grid h4 { font-family: 'Syne'; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8rem;}
+  .footer-links-grid a { display: block; color: var(--ink); text-decoration: none; margin-bottom: 6px; opacity: 0.8; font-family: 'DM Mono'; font-size: 0.7rem; }
+  .footer-links-grid a:hover { opacity: 1; color: var(--accent); }
 
-  .footer-col h4 { font-family: 'Syne'; margin-bottom: 12px; font-size: 0.9rem; }
-  .footer-col a { display: block; color: var(--ink); text-decoration: none; margin-bottom: 6px; opacity: 0.7; }
-  .footer-col a:hover { opacity: 1; color: var(--accent); }
-
-  @media (max-width: 800px) {
-    .partners-grid, .main-layout, .footer-bottom { grid-template-columns: 1fr; }
-    .hero-strip { grid-template-columns: 1fr 1fr; gap: 20px; }
-  }
+  .founder-info strong { display: block; font-family: 'Syne'; font-size: 1rem; margin-bottom: 4px; }
+  
+  @media print { .page { padding: 20px; } .footer-cta { display: none; } }
 </style>
 </head>
 <body>
@@ -234,98 +150,105 @@
         <span class="company-name">SentryNode Gateway</span>
       </div>
       <div class="tagline">Semantic Security Layer for Autonomous Agents</div>
+      <div style="font-family:'DM Mono'; font-size:0.65rem; color:var(--ghost); padding-left:52px; margin-top:6px; font-style:italic;">"The metric that matters isn't just Accuracy — it's Cost Per Successful Task."</div>
     </div>
     <div class="header-meta">
       <div class="patent-badge"><span class="dot"></span> U.S. Patent Pending · #63/982,542</div>
-      <div style="font-family:'DM Mono'; font-size:0.7rem; color:var(--ghost)">github.com/nehadangwal/sentrynode-gateway</div>
+      <div style="font-family:'DM Mono'; font-size:0.7rem; color:var(--ghost)">Filed Feb 13, 2026 · Apache 2.0</div>
+      <a href="https://github.com/nehadangwal/sentrynode-gateway" target="_blank" style="font-family:'DM Mono'; font-size:0.7rem; color:var(--ink); text-decoration:none;">github.com/nehadangwal/sentrynode-gateway</a>
     </div>
   </header>
 
   <div class="hero-strip">
-    <div class="stat-block"><div class="stat-num"><span>77.6</span>%</div><div class="stat-label">Cost reduction</div></div>
-    <div class="stat-block"><div class="stat-num">80%</div><div class="stat-label">Offloaded to SLM</div></div>
-    <div class="stat-block"><div class="stat-num">98%</div><div class="stat-label">Quality Parity</div></div>
-    <div class="stat-block"><div class="stat-num"><span>100</span>%</div><div class="stat-label">Loops Intercepted</div></div>
+    <div class="stat-block"><div class="stat-num"><span>77.6</span>%</div><div class="stat-label">Cost reduction<br>per 1k requests</div></div>
+    <div class="stat-block"><div class="stat-num">80%</div><div class="stat-label">Offloaded to SLM<br>vs frontier</div></div>
+    <div class="stat-block"><div class="stat-num">98%</div><div class="stat-label">Quality parity<br>semantic match</div></div>
+    <div class="stat-block"><div class="stat-num"><span>100</span>%</div><div class="stat-label">Agentic loops<br>intercepted</div></div>
   </div>
 
-  <div class="main-layout">
+  <div class="main-grid">
     <div>
-      <span class="section-label">Executive Brief</span>
+      <span class="section-label">Problem & Solution</span>
       <div class="ps-card">
-        <div style="margin-bottom: 24px;">
-          <div class="ps-heading"><span class="tag tag-problem">THE PROBLEM</span> The AI Tax</div>
-          <p style="font-size: 0.9rem; color: #444;">In 2026, 80% of enterprise AI spend is waste. Without a governance layer, autonomous agents spiral into recursive loops that exhaust cloud budgets in minutes.</p>
+        <div style="margin-bottom: 24px; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 20px;">
+          <div class="ps-heading"><span class="tag tag-problem">PROBLEM</span> The AI Tax</div>
+          <div class="ps-body">In 2026, 80% of enterprise AI spend is waste — frontier models handling low-complexity tasks. Without a governance layer, autonomous agents spiral into recursive loops that exhaust cloud budgets in minutes.</div>
         </div>
         <div>
-          <div class="ps-heading"><span class="tag tag-solution">THE SOLUTION</span> SentryNode Gateway</div>
-          <p style="font-size: 0.9rem; color: #444;">A high-performance semantic gateway enforcing intelligent routing, hard budget guardrails, and cryptographic provenance on every AI request.</p>
+          <div class="ps-heading"><span class="tag tag-solution">SOLUTION</span> SentryNode Gateway</div>
+          <div class="ps-body">A high-performance semantic gateway that enforces intelligent routing, hard budget guardrails, and cryptographic provenance on every AI request — reserving frontier intelligence only for tasks that require it.</div>
         </div>
       </div>
     </div>
 
     <div>
-      <span class="section-label">Performance Benchmarks</span>
+      <span class="section-label">Validated Benchmarks (1k Req)</span>
       <div class="bench-card">
-        <div class="bench-row"><span>Direct Cost (1k req)</span><span>$5.00</span></div>
-        <div class="bench-row"><span>Gateway Cost (1k req)</span><span class="positive">$1.12</span></div>
-        <div class="bench-row"><span>Efficiency Gain</span><span style="color:var(--gold)">77.6%</span></div>
-        <div class="bench-row"><span>Agentic Loops Killed</span><span class="positive">100%</span></div>
-        <div style="margin-top: 15px; font-size: 0.65rem; font-family: 'DM Mono'; opacity: 0.6;">
-          Validated via 1,000 request stress test.
+        <div class="bench-row"><span>Cost per 1k (Direct)</span><span class="bench-val" style="opacity:0.5;">$5.00</span></div>
+        <div class="bench-row"><span>Cost per 1k (Gateway)</span><span class="bench-val positive">$1.12</span></div>
+        <div class="bench-row"><span>Efficiency Gain</span><span class="bench-val" style="color:var(--gold)">77.6% reduction</span></div>
+        <div class="bench-row"><span>SLM Offload Rate</span><span class="bench-val positive">80%</span></div>
+        <div class="bench-row"><span>Semantic Quality Match</span><span class="bench-val positive">98%</span></div>
+        <div style="margin-top:14px;">
+           <a href="https://medium.com/@nehadangwal/the-ai-tax-is-breaking-engineering-margins-a-17m-perspective-on-finops-7fce44983866" target="_blank" style="font-family:'DM Mono'; font-size:0.62rem; color:var(--accent); text-decoration:none;">↗ Research Methodology</a>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="partners-section">
-    <span class="section-label" style="text-align: center; margin-bottom: 30px;">Target Design Partners</span>
-    <div class="partners-grid">
+  <div class="centered-section">
+    <span class="section-label">Target Design Partners</span>
+    <div class="partner-grid">
       <div class="partner-card">
-        <div class="partner-industry">FinTech / Banking</div>
-        <div class="partner-title">Compliance Workflows</div>
-        <div class="partner-body">Automated regulatory review pipelines running 10k+ requests/day.</div>
+        <div class="uc-industry">FinTech / Banking</div>
+        <div class="uc-title">Agentic Compliance Workflows</div>
+        <div class="uc-body">Document review and regulatory summarization pipelines running 10k+ requests/day — cuts spend while ensuring cryptographic audit trails.</div>
       </div>
       <div class="partner-card">
-        <div class="partner-industry">Enterprise SaaS</div>
-        <div class="partner-title">Multi-Tenant AI</div>
-        <div class="partner-body">Enabling chargeback and per-user budget enforcement at scale.</div>
+        <div class="uc-industry">Enterprise SaaS</div>
+        <div class="uc-title">Multi-Tenant AI Features</div>
+        <div class="uc-body">Chargeback and budget enforcement for platforms embedding AI features for thousands of customers.</div>
       </div>
       <div class="partner-card">
-        <div class="partner-industry">DevOps / Platform</div>
-        <div class="partner-title">Code Agent Sandbox</div>
-        <div class="partner-body">Kernel-level isolation to prevent infinite loops and ghost compute bills.</div>
+        <div class="uc-industry">DevOps / Platform Eng</div>
+        <div class="uc-title">Code Agent Execution</div>
+        <div class="uc-body">Hardened execution layer and circuit breakers to prevent infinite loops from creating ghost compute bills.</div>
       </div>
     </div>
   </div>
 
-  <footer class="footer">
-    <div class="footer-cta-box">
-      <div style="font-family:'DM Mono'; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 5px;">Design Partner Pilot</div>
-      <h2 style="font-family:'Syne'; font-size: 1.8rem; font-weight: 800;">Only 2 Slots Open</h2>
-      <a href="https://calendly.com/neha-sentrynode/diagnostic" class="btn-primary">Book a Conversation →</a>
+  <footer class="footer-container">
+    <div class="footer-cta">
+      <div style="font-family:'DM Mono'; font-size:0.6rem; opacity:0.6; text-transform:uppercase;">Design Partner Pilot</div>
+      <h3>2 Slots Open Now</h3>
+      <a href="https://calendly.com/neha-sentrynode/diagnostic" class="btn-black">→ Book a Conversation</a>
     </div>
 
-    <div class="footer-bottom">
-      <div class="footer-col">
-        <h4>Intelligence</h4>
-        <a href="#">The AI Tax: $17M Perspective ↗</a>
-        <a href="#">The Sovereign Agent ↗</a>
-        <a href="#">ROI Calculator ↗</a>
+    <div class="footer-links-grid">
+      <div>
+        <h4>Research & Links</h4>
+        <a href="https://medium.com/@nehadangwal/the-ai-tax-is-breaking-engineering-margins-a-17m-perspective-on-finops-7fce44983866" target="_blank">The AI Tax: $17M FinOps Perspective ↗</a>
+        <a href="https://medium.com/@nehadangwal/the-sovereign-agent-why-naked-ai-execution-is-an-enterprise-liability-f4f31a116493" target="_blank">The Sovereign Agent Liability ↗</a>
+        <a href="https://github.com/nehadangwal/sentrynode-gateway/blob/main/ARCHITECTURE.md" target="_blank">Technical Architecture ↗</a>
+        <a href="https://nehadangwal.github.io/sentrynode-gateway/roi-calculator" target="_blank" style="color:var(--accent2); opacity:1;">→ Calculate your AI Tax savings</a>
       </div>
-      <div class="footer-col">
-        <h4>Developer</h4>
-        <a href="#">GitHub Repository ↗</a>
-        <a href="#">Technical Architecture ↗</a>
-        <a href="#">Apache 2.0 License ↗</a>
+      
+      <div>
+        <h4>Open Source</h4>
+        <a href="https://github.com/nehadangwal/sentrynode-gateway" target="_blank">GitHub Repository ↗</a>
+        <a href="https://github.com/nehadangwal/sentrynode-gateway/blob/main/FOUNDER.md" target="_blank">About the Founder ↗</a>
+        <a href="https://github.com/nehadangwal/sentrynode-gateway" target="_blank">Apache 2.0 License</a>
       </div>
-      <div class="footer-col" style="text-align: right;">
-        <h4 style="color:var(--accent)">Neha Dangwal</h4>
-        <p style="opacity: 0.7; margin-bottom: 10px;">Founder · 9 yrs Experience<br>Cisco · Dell · MS Comp Sci</p>
+
+      <div class="founder-info" style="text-align: right;">
+        <strong>Neha Dangwal</strong>
+        <p style="font-size: 0.75rem; color: var(--ghost); margin-bottom: 8px;">Founder · SentryNode Gateway<br>9 yrs · Cisco · Dell · MS Comp Sci</p>
+        <a href="https://linkedin.com/in/nehadangwal" target="_blank">linkedin.com/in/nehadangwal ↗</a><br>
         <a href="mailto:neha.sentrynode@gmail.com">neha.sentrynode@gmail.com</a>
       </div>
     </div>
     
-    <div style="font-family:'DM Mono'; font-size: 0.6rem; color: var(--ghost); margin-top: 20px;">
+    <div style="font-family:'DM Mono'; font-size: 0.6rem; color: var(--ghost); padding-bottom: 20px;">
       © 2026 SentryNode Gateway · U.S. Patent Pending #63/982,542
     </div>
   </footer>
