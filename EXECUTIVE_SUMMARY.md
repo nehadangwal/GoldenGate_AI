@@ -32,11 +32,11 @@ In a validated benchmark of 1,000 mixed-complexity requests using 2026 pricing t
 * 50% LLM-Drain neutralized — rate limiting held under high-velocity attack simulation
 * 40ms loop interception — semantic circuit breaker validated under recursive attack
 
-🤝 The Ask: Design Partner Pilot — Q2 2026
+🤝 The Ask: Design Partner Pilot — Accepting Now
 
 SentryNode is opening 2 Design Partner slots for enterprise teams building agentic workflows who require hard budget guardrails, cryptographic provenance, and audit-ready governance. 
 
 If your team is past first deployment and the cost curve is already uncomfortable — that's the conversation.
 
-📩 neha.sentrynode@gmail.com 
+📩 neha.sentrynode.gateway@gmail.com
 linkedin.com/in/nehadangwal
