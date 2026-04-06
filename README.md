@@ -1,4 +1,4 @@
-# 🌉 SentryNode Gateway
+# 🌉 SentryNode Gateway 
 ### Architecting Technical Sovereignty for the AI Era
 
 > *"The metric that matters in 2026 isn't just Accuracy — it's Cost Per Successful Task."*
@@ -171,7 +171,7 @@ ROI Multiplier:         12.5x (Claim 112)
 | [EXECUTIVE_SUMMARY.md](./EXECUTIVE_SUMMARY.md) | Business case and validated ROI |
 | [RESEARCH_PILLARS.md](./RESEARCH_PILLARS.md) | Technical deep-dive: Adaptive Routing, Shadow Mode, Unit Economics |
 | [ARCHITECTURE.md](./ARCHITECTURE.md) | High-level system architecture |
-| [FOUNDER.md](./FOUNDER.md) | About the founder and co-founder search |
+| [FOUNDER.md](./FOUNDER.md) | About the founder |
 | [SECURITY.md](./SECURITY.md) | Security policy and responsible disclosure |
 
 **Published Research:**
@@ -206,8 +206,6 @@ SentryNode is built on the principle of Architectural Sovereignty. Contributions
 **Neha Dangwal** — 9 years at Cisco and Dell, $17M+ measurable impact, 11.5M+ devices. Built SentryNode to solve the AI governance problem she witnessed firsthand at scale.
 
 [Read full founder bio →](./FOUNDER.md)
-
-*Seeking a **Business Co-Founder** to own GTM, enterprise partnerships, and fundraising.*
 
 ---
 
