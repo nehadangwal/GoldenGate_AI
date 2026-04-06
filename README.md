@@ -213,4 +213,4 @@ SentryNode is built on the principle of Architectural Sovereignty. Contributions
 
 **U.S. Patent Pending · #63/982,542 · Filed February 13, 2026**
 *© 2024–2026 Neha Dangwal. All rights reserved.*
-*Last updated: March 2026*
+*Last updated: April 2026*
