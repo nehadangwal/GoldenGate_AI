@@ -155,8 +155,14 @@
   input[type="range"] { flex: 1; accent-color: var(--accent); cursor: pointer; }
   .slider-val { font-family: 'DM Mono'; color: var(--accent); font-weight: 500; font-size: 18px; }
 
-  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
-  .stat-box { background: var(--input-bg); border: 1px solid var(--border); border-radius: 8px; padding: 24px; }
+  /* 1. Set the default state (Mobile) to stack */
+  .stats-row { 
+    display: grid; 
+    grid-template-columns: 1fr; /* Stacks tiles vertically */
+    gap: 16px; 
+    margin-bottom: 32px; 
+  }
+  .stat-box { background: var(--input-bg); border: 1px solid var(--border); border-radius: 8px; padding: 24px; text-align: center; }
   .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; margin-bottom: 8px; font-family: 'DM Mono'; }
   .stat-value { font-size: 26px; font-weight: 800; color: var(--heading); }
 
