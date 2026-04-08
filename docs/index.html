@@ -34,47 +34,120 @@
   .page {
     max-width: 1080px;
     margin: 0 auto;
-    padding: 48px 40px;
+    padding: 24px 20px; /* Reduced for mobile */
+  }
+
+  @media (min-width: 768px) {
+    .page { padding: 48px 40px; }
   }
 
   /* ── HEADER ── */
   .header {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: start;
+    display: flex;
+    flex-direction: column; /* Stacked for mobile */
     gap: 24px;
     padding-bottom: 32px;
     border-bottom: 2px solid var(--ink);
     margin-bottom: 36px;
   }
 
+  @media (min-width: 768px) {
+    .header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      flex-direction: row;
+      align-items: start;
+    }
+  }
+
   .logo-row { display: flex; align-items: center; gap: 12px; }
-  .logo-icon { width: 40px; height: 40px; background: var(--ink); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-  .company-name { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
-  .tagline { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--ghost); letter-spacing: 0.12em; text-transform: uppercase; padding-left: 52px; margin-top: 4px;}
+  .logo-icon { width: 40px; height: 40px; background: var(--ink); border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .company-name { font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 5vw, 2.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
   
-  .header-meta { text-align: right; display: flex; flex-direction: column; gap: 4px; align-items: flex-end; }
-  .patent-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--ink); color: white; font-family: 'DM Mono'; font-size: 0.65rem; padding: 5px 10px; border-radius: 4px; }
+  .tagline { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--ghost); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 8px;}
+  
+  @media (min-width: 768px) {
+    .tagline { padding-left: 52px; margin-top: 4px; }
+  }
+
+  .header-meta { text-align: left; display: flex; flex-direction: column; gap: 6px; }
+  
+  @media (min-width: 768px) {
+    .header-meta { text-align: right; align-items: flex-end; gap: 4px; }
+  }
+
+  .patent-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--ink); color: white; font-family: 'DM Mono'; font-size: 0.65rem; padding: 5px 10px; border-radius: 4px; width: fit-content; }
   .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 
   /* ── HERO STRIP ── */
+  /* ── HERO STRIP (FIXED FOR DRIFTING) ── */
   .hero-strip {
     background: var(--ink);
     border-radius: 12px;
-    padding: 32px;
+    padding: 24px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* Default for mobile: 2 columns */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 24px 0;
     margin-bottom: 32px;
     color: white;
+    overflow: hidden; /* Prevents any internal drift from leaking out */
   }
-  .stat-block { border-right: 1px solid rgba(255,255,255,0.1); padding: 0 20px; }
-  .stat-block:last-child { border-right: none; }
-  .stat-num { font-family: 'Syne'; font-size: 2.4rem; font-weight: 800; line-height: 1; }
-  .stat-num span { color: var(--accent); }
-  .stat-label { font-family: 'DM Mono'; font-size: 0.65rem; color: var(--ghost); text-transform: uppercase; margin-top: 6px; line-height: 1.3; }
 
+  @media (min-width: 768px) {
+    .hero-strip {
+      /* Back to 4 columns for desktop */
+      grid-template-columns: repeat(4, 1fr);
+      padding: 32px;
+      gap: 0;
+    }
+  }
+
+  .stat-block { 
+    padding: 0 10px; 
+    border-right: none; 
+    text-align: left; /* Keeps text aligned inside its box */
+  }
+
+  /* Add a subtle divider only between the two columns on mobile */
+  .stat-block:nth-child(odd) { 
+    border-right: 1px solid rgba(255,255,255,0.1); 
+  }
+  
+  @media (min-width: 768px) {
+    .stat-block { 
+      border-right: 1px solid rgba(255,255,255,0.1); 
+      padding: 0 20px; 
+    }
+    .stat-block:last-child { border-right: none; }
+    /* Ensure the second block doesn't have a right border on desktop if it's not the last */
+    .stat-block:nth-child(2) { border-right: 1px solid rgba(255,255,255,0.1); }
+  }
+
+  .stat-num { 
+    font-family: 'Syne'; 
+    /* clamp makes the font shrink as the screen gets narrower */
+    font-size: clamp(1.8rem, 8vw, 2.4rem); 
+    font-weight: 800; 
+    line-height: 1; 
+  }
+  .stat-num span { color: var(--accent); }
+  .stat-label { 
+    font-family: 'DM Mono'; 
+    font-size: 0.65rem; 
+    color: var(--ghost); 
+    text-transform: uppercase; 
+    margin-top: 6px; 
+    line-height: 1.3; 
+    max-width: 140px; /* Prevents label from pushing the box width */
+  }
   /* ── LAYOUT ── */
-  .main-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; margin-bottom: 40px; }
+  .main-grid { display: grid; grid-template-columns: 1fr; gap: 28px; margin-bottom: 40px; }
+  
+  @media (min-width: 850px) {
+    .main-grid { grid-template-columns: 1.4fr 1fr; }
+  }
+
   .section-label { font-family: 'DM Mono'; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ghost); margin-bottom: 12px; display: block; }
 
   .ps-card { background: var(--bone); border-radius: 10px; padding: 24px; height: 100%; }
@@ -89,15 +162,20 @@
   .bench-val { font-family: 'DM Mono'; font-weight: 500; }
   .bench-val.positive { color: var(--accent); }
 
-  /* ── DESIGN PARTNERS (CENTERED) ── */
+  /* ── DESIGN PARTNERS ── */
   .centered-section { text-align: center; margin-bottom: 48px; }
-  .partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+  .partner-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 16px; }
+  
+  @media (min-width: 768px) {
+    .partner-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
   .partner-card { border: 1.5px solid var(--ink); border-radius: 10px; padding: 20px; text-align: left; background: white; }
   .uc-industry { font-family: 'DM Mono'; font-size: 0.6rem; color: var(--ghost); text-transform: uppercase; margin-bottom: 6px; }
   .uc-title { font-family: 'Syne'; font-weight: 700; font-size: 0.85rem; margin-bottom: 8px; }
   .uc-body { font-size: 0.75rem; color: #5A6175; line-height: 1.5; }
 
-  /* ── FOOTER (RESTORED & CENTERED) ── */
+  /* ── FOOTER ── */
   .footer-container {
     border-top: 2px solid var(--ink);
     padding-top: 40px;
@@ -110,27 +188,88 @@
   .footer-cta {
     background: var(--accent);
     border-radius: 12px;
-    padding: 24px 40px;
+    padding: 24px;
     text-align: center;
     width: 100%;
     max-width: 500px;
   }
-  .footer-cta h3 { font-family: 'Syne'; font-size: 1.5rem; font-weight: 800; margin: 4px 0 12px; }
-  .btn-black { display: inline-block; background: var(--ink); color: white; text-decoration: none; padding: 8px 18px; border-radius: 6px; font-family: 'DM Mono'; font-size: 0.7rem; }
 
+  @media (min-width: 768px) {
+    .footer-cta { padding: 24px 40px; }
+  }
+
+  .footer-cta h3 { font-family: 'Syne'; font-size: 1.5rem; font-weight: 800; margin: 4px 0 12px; }
+  .btn-black { display: inline-block; background: var(--ink); color: white; text-decoration: none; padding: 12px 24px; border-radius: 6px; font-family: 'DM Mono'; font-size: 0.75rem; }
+
+/* ── FOOTER LINKS (FIXED FOR MOBILE HAPHAZARDNESS) ── */
   .footer-links-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1.5fr;
+    /* Default: single column for mobile */
+    grid-template-columns: 1fr; 
     width: 100%;
-    gap: 40px;
+    gap: 32px;
     text-align: left;
     font-size: 0.75rem;
   }
-  .footer-links-grid h4 { font-family: 'Syne'; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8rem;}
-  .footer-links-grid a { display: block; color: var(--ink); text-decoration: none; margin-bottom: 6px; opacity: 0.8; font-family: 'DM Mono'; font-size: 0.7rem; }
-  .footer-links-grid a:hover { opacity: 1; color: var(--accent); }
 
-  .founder-info strong { display: block; font-family: 'Syne'; font-size: 1rem; margin-bottom: 4px; }
+  /* Restore 3-columns only on Desktop */
+  @media (min-width: 768px) {
+    .footer-links-grid { 
+      grid-template-columns: 1.5fr 1fr 1.5fr; 
+      gap: 40px; 
+    }
+  }
+
+  .footer-links-grid h4 { 
+    font-family: 'Syne'; 
+    margin-bottom: 16px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.05em; 
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--line); /* Adds structure to mobile rows */
+    padding-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .footer-links-grid a { 
+    display: block; 
+    color: var(--ink); 
+    text-decoration: none; 
+    margin-bottom: 10px; 
+    opacity: 0.8; 
+    font-family: 'DM Mono'; 
+    font-size: 0.75rem; 
+  }
+
+  .footer-links-grid a:hover { 
+    opacity: 1; 
+    color: var(--accent); 
+  }
+
+  /* ── FOUNDER INFO ── */
+  .founder-info { 
+    text-align: left; /* Left align for mobile thumb-reading */
+    padding-top: 10px;
+  }
+
+  @media (min-width: 768px) {
+    .founder-info { 
+      text-align: right; /* Right align for desktop elegance */
+    }
+  }
+
+  .founder-info strong { 
+    display: block; 
+    font-family: 'Syne'; 
+    font-size: 1.1rem; 
+    margin-bottom: 4px; 
+    font-weight: 800;
+  }
+  
+  .founder-info p {
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
   
   @media print { .page { padding: 20px; } .footer-cta { display: none; } }
 </style>
