@@ -112,8 +112,9 @@
     .header { text-align: left; }
     .badge { justify-content: flex-start; }
     .container { padding: 60px 24px; }
-    
-    /* ADD THESE TWO LINES */
+  
+    /* These three lines fix the 'drifting' boxes */
+    .input-grid { grid-template-columns: 1fr 1fr; }
     .stats-row { grid-template-columns: repeat(3, 1fr); }
     .risk-list { grid-template-columns: 1fr 1fr; }
   }
@@ -167,17 +168,36 @@
   .bar-fill.blue { background: linear-gradient(90deg, #00e5ff, #00ff88); }
   [data-theme="light"] .bar-fill.blue { background: linear-gradient(90deg, #0066cc, #1a7f4e); }
 
-  .banner { background: var(--green); color: #000; padding: 32px; border-radius: 12px; text-align: center; margin-top: 20px; }
-  [data-theme="light"] .banner { color: #fff; }
-  .banner h2 { font-size: 48px; font-weight: 800; letter-spacing: -0.03em; }
+  .banner { 
+    background: var(--green); 
+    color: #000; 
+    padding: 24px 15px; /* Reduced horizontal padding for mobile */
+    border-radius: 12px; 
+    text-align: center; 
+    margin-top: 20px; 
+    overflow-wrap: break-word; /* Prevents text from leaking out */
+  }
+  
+  .banner h2 { 
+    font-size: clamp(32px, 10vw, 48px); /* Scales down on mobile */
+    font-weight: 800; 
+    letter-spacing: -0.03em; 
+  }
+  
+  #perEng {
+    font-size: 13px; /* Slightly smaller for mobile readability */
+    margin-top: 8px;
+  }
 
   /* FIX 1: Methodology anchor */
   .methodology-note {
     margin-top: 16px;
     font-family: 'DM Mono';
     font-size: 11px;
-    color: rgba(0,0,0,0.55);
-    line-height: 1.5;
+    color: rgba(0,0,0,0.6);
+    line-height: 1.4;
+    padding: 0 10px; /* Gives text a 'safety buffer' from the edges */
+    display: block; /* Ensures it behaves like a paragraph */
   }
   [data-theme="light"] .methodology-note { color: rgba(255,255,255,0.7); }
   .methodology-note a { color: rgba(0,0,0,0.7); text-decoration: underline; }
@@ -195,7 +215,27 @@
     font-family: 'DM Mono'; font-size: 11px; color: var(--muted);
     text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;
   }
-  .btn { display: inline-block; padding: 18px 36px; border-radius: 8px; font-weight: 700; text-decoration: none; cursor: pointer; border: none; transition: 0.2s; font-family: 'Syne'; font-size: 15px; }
+  .btn { 
+    display: block; /* Stack buttons on mobile */
+    width: 100%;    /* Make them full width for easy tapping */
+    margin-bottom: 12px;
+    padding: 18px 20px; 
+    border-radius: 8px; 
+    font-weight: 700; 
+    text-decoration: none; 
+    border: none; 
+    font-family: 'Syne'; 
+    font-size: 15px; 
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .btn { 
+      display: inline-block; 
+      width: auto; 
+      margin-bottom: 0;
+    }
+  }
   .btn-main { background: var(--accent); color: #000; margin-right: 12px; }
   .btn-main:hover { opacity: 0.88; }
   .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
