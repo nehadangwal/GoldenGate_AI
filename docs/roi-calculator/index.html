@@ -32,30 +32,68 @@
   }
   [data-theme="light"] body::before { background-image: linear-gradient(rgba(0,102,204,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,102,204,0.03) 1px, transparent 1px); }
 
-  .container { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 60px 24px; }
+  .container { 
+    position: relative; 
+    z-index: 1; 
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 30px 20px; /* Smaller padding for mobile */
+  }
 
   /* ── THEME TOGGLE ── */
   .theme-toggle-wrap { display: flex; justify-content: flex-end; margin-bottom: 28px; }
   .theme-toggle {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 6px; padding: 8px 14px; cursor: pointer;
-    font-family: 'DM Mono'; font-size: 11px; color: var(--muted);
-    text-transform: uppercase; letter-spacing: 0.1em; transition: 0.2s;
+    /* Increase padding for a larger tap area */
+    padding: 12px 20px; 
+    min-height: 44px; /* Standard mobile touch height */
+    display: inline-flex; 
+    align-items: center; 
+    gap: 8px;
+    background: var(--surface); 
+    border: 1px solid var(--border);
+    border-radius: 6px; 
+    cursor: pointer;
+    font-family: 'DM Mono'; 
+    font-size: 12px; /* Slightly larger for readability */
   }
   .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
   .theme-icon { font-size: 14px; }
 
-  .header { margin-bottom: 48px; }
+  .header { 
+    margin-bottom: 48px; 
+    text-align: center; /* Center by default for mobile */
+  }
   .badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(0,229,255,0.1); border: 1px solid rgba(0,229,255,0.3);
-    border-radius: 4px; padding: 6px 12px; font-family: 'DM Mono'; font-size: 11px;
-    color: var(--accent); text-transform: uppercase; margin-bottom: 20px;
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; /* Center content inside badge */
+    gap: 8px;
+    background: rgba(0,229,255,0.1); 
+    border: 1px solid rgba(0,229,255,0.3);
+    border-radius: 4px; 
+    padding: 6px 12px; 
+    font-family: 'DM Mono'; 
+    font-size: 11px;
+    color: var(--accent); 
+    text-transform: uppercase; 
+    margin-bottom: 20px;
   }
   [data-theme="light"] .badge { background: rgba(0,102,204,0.08); border-color: rgba(0,102,204,0.25); }
-  h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; color: var(--heading); line-height: 1; margin-bottom: 12px; }
-  .tagline { font-size: 18px; color: var(--muted); font-weight: 400; }
+  h1 { 
+    /* Min 28px, scales with screen width, Max 52px */
+    font-size: clamp(28px, 6vw, 52px); 
+    font-weight: 800; 
+    color: var(--heading); 
+    line-height: 1.1; 
+    margin-bottom: 12px; 
+  }
+  
+  .tagline { 
+    /* Min 14px, Max 18px */
+    font-size: clamp(14px, 3vw, 18px); 
+    color: var(--muted); 
+    font-weight: 400; 
+  }
 
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 40px; margin-bottom: 28px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
   [data-theme="light"] .card { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
@@ -69,10 +107,11 @@
     gap: 20px;
   }
   
+  /* Switch back to Left-Align for Desktop */
   @media (min-width: 768px) {
-    .input-grid { grid-template-columns: 1fr 1fr; }
-    .stats-row { grid-template-columns: repeat(3, 1fr); }
-    .risk-list { grid-template-columns: 1fr 1fr; }
+    .header { text-align: left; }
+    .badge { justify-content: flex-start; }
+    .container { padding: 60px 24px; }
   }
   .field { display: flex; flex-direction: column; gap: 8px; }
   label { font-size: 14px; font-weight: 700; color: var(--heading); }
@@ -94,9 +133,16 @@
   .pricing-note span { color: var(--accent); }
 
   input[type="number"], select {
-    width: 100%; background: var(--input-bg); border: 1px solid var(--border); border-radius: 8px;
-    padding: 14px; font-family: 'DM Mono'; font-size: 15px; color: var(--heading); outline: none;
-    transition: border-color 0.2s;
+    width: 100%; 
+    background: var(--input-bg); 
+    border: 1px solid var(--border); 
+    border-radius: 8px;
+    padding: 16px; /* Larger padding for mobile typing */
+    font-family: 'DM Mono'; 
+    /* CRITICAL: Must be 16px to prevent iPhone auto-zoom */
+    font-size: 16px; 
+    color: var(--heading); 
+    outline: none;
   }
   input[type="number"]:focus, select:focus { border-color: var(--accent); }
 
