@@ -62,7 +62,18 @@
   .card-title { font-size: 12px; font-family: 'DM Mono'; color: var(--accent); text-transform: uppercase; margin-bottom: 32px; letter-spacing: 0.2em; display: flex; align-items: center; gap: 10px; }
   .card-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-  .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 20px; }
+  /* Update this in your <style> section */
+  .input-grid, .stats-row, .risk-list {
+    display: grid;
+    grid-template-columns: 1fr; /* Default: stack on mobile */
+    gap: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .input-grid { grid-template-columns: 1fr 1fr; }
+    .stats-row { grid-template-columns: repeat(3, 1fr); }
+    .risk-list { grid-template-columns: 1fr 1fr; }
+  }
   .field { display: flex; flex-direction: column; gap: 8px; }
   label { font-size: 14px; font-weight: 700; color: var(--heading); }
   .hint { font-size: 12px; color: var(--muted); line-height: 1.2; margin-bottom: 4px; }
