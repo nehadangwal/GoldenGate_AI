@@ -195,7 +195,7 @@ For inquiries regarding:
 - Enterprise Sandbox configurations
 - Design Partner Pilot — Q2 2026 (2 slots open)
 
-Contact: [neha.sentrynode.gateway@gmail.com](mailto:neha.sentrynode@gmail.com) · [linkedin.com/in/nehadangwal](https://linkedin.com/in/nehadangwal)
+Contact: [nehadangwal@sentrynodegateway.com](mailto:nehadangwal@sentrynodegateway.com) · [linkedin.com/in/nehadangwal](https://linkedin.com/in/nehadangwal)
 
 ---
 
