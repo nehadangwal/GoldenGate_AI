@@ -49,7 +49,7 @@ Neha is a leading voice in **Inference-Level Sovereignty**, moving the conversat
 **LinkedIn:** [linkedin.com/in/nehadangwal](https://linkedin.com/in/nehadangwal)  
 **GitHub:** [github.com/nehadangwal/sentrynode-gateway](https://github.com/nehadangwal/sentrynode-gateway)  
 **Research:** [The AI Tax: A $17M FinOps Perspective](https://medium.com/@nehadangwal/the-ai-tax-is-breaking-engineering-margins-a-17m-perspective-on-finops-7fce44983866)  
-**Email:** [neha.sentrynode.gateway@gmail.com](mailto:neha.sentrynode.gateway@gmail.com)
+**Email:** [nehadangwal@sentrynodegateway.com](mailto:nehadangwal@sentrynodegateway.com)
 
 
 *U.S. Patent Pending · #63/982,542 · Filed February 13, 2026*
