@@ -334,11 +334,24 @@
     filter: brightness(1.1);
   }
 
-  /* Mobile adjustments for sticky bar */
+  /* Mobile adjustments to KEEP the title visible */
   @media (max-width: 600px) {
-    .sticky-text strong { display: none; } /* Hide label on tiny screens */
-    .sticky-text { font-size: 0.7rem; }
-    .sticky-btn { padding: 6px 12px; font-size: 0.7rem; }
+    .sticky-content {
+      flex-direction: row; /* Keeps them side-by-side */
+      gap: 8px;
+    }
+    .sticky-text { 
+      font-size: 0.6rem; /* Shrinks the text to fit */
+      line-height: 1.1;
+    }
+    .sticky-text strong { 
+      display: inline; /* Shows the title again */
+      color: var(--accent); /* Highlights it so it's readable while small */
+    }
+    .sticky-btn { 
+      padding: 5px 10px; 
+      font-size: 0.65rem; 
+    }
   }
 </style>
 </head>
