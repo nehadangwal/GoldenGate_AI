@@ -272,9 +272,87 @@
   }
   
   @media print { .page { padding: 20px; } .footer-cta { display: none; } }
+  /* ── STICKY ROI HEADER ── */
+  .sticky-roi-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--ink);
+    border-bottom: 1px solid var(--accent);
+    padding: 12px 20px;
+    color: white;
+  }
+
+  .sticky-content {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .sticky-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Animated pulse to draw attention without being annoying */
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 rgba(0, 194, 168, 0.4);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 194, 168, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 194, 168, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 194, 168, 0); }
+  }
+
+  .sticky-btn {
+    background: var(--accent);
+    color: var(--ink);
+    text-decoration: none;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 8px 16px;
+    border-radius: 4px;
+    white-space: nowrap;
+    transition: transform 0.2s ease;
+  }
+
+  .sticky-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+  }
+
+  /* Mobile adjustments for sticky bar */
+  @media (max-width: 600px) {
+    .sticky-text strong { display: none; } /* Hide label on tiny screens */
+    .sticky-text { font-size: 0.7rem; }
+    .sticky-btn { padding: 6px 12px; font-size: 0.7rem; }
+  }
 </style>
 </head>
 <body>
+
+<div class="sticky-roi-bar">
+  <div class="sticky-content">
+    <div class="sticky-text">
+      <span class="pulse-dot"></span>
+      <strong>2026 ROI Diagnostic:</strong> Analyze your specific "AI Tax" exposure.
+    </div>
+    <a href="https://sentrynodegateway.com/roi-calculator/" class="sticky-btn">Calculate Your Savings →</a>
+  </div>
+</div>
 
 <div class="page">
   <header class="header">
@@ -369,7 +447,6 @@
         <a href="https://medium.com/@nehadangwal/the-ai-tax-is-breaking-engineering-margins-a-17m-perspective-on-finops-7fce44983866" target="_blank">The AI Tax: $17M FinOps Perspective ↗</a>
         <a href="https://medium.com/@nehadangwal/the-sovereign-agent-why-naked-ai-execution-is-an-enterprise-liability-f4f31a116493" target="_blank">The Sovereign Agent Liability ↗</a>
         <a href="https://github.com/nehadangwal/sentrynode-gateway/blob/main/ARCHITECTURE.md" target="_blank">Technical Architecture ↗</a>
-        <a href="https://nehadangwal.github.io/sentrynode-gateway/roi-calculator" target="_blank" style="color:var(--accent2); opacity:1;">→ Calculate your AI Tax savings</a>
       </div>
       
       <div>
