@@ -416,42 +416,75 @@
   function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
 
   function calculate() {
-    const monthly = parseFloat(document.getElementById('monthlySpend').value) || 0;
-    const routine = parseFloat(document.getElementById('routineSlider').value) / 100;
-    const team = parseInt(document.getElementById('teamSize').value) || 1;
-    const agents = parseInt(document.getElementById('agents').value) || 0;
+    const monthly  = parseFloat(document.getElementById('monthlySpend').value) || 0;
+    const routine  = parseFloat(document.getElementById('routineSlider').value) / 100;
+    const team     = parseInt(document.getElementById('teamSize').value) || 1;
+    const agents   = parseInt(document.getElementById('agents').value) || 0;
     const modelElem = document.getElementById('modelTier');
+    const modelRate = parseFloat(modelElem.value);                         // ← NOW USED
     const modelName = modelElem.options[modelElem.selectedIndex].text.split(' (')[0];
 
     document.getElementById('sliderDisplay').textContent = Math.round(routine * 100) + '%';
     document.getElementById('p-routine').textContent = Math.round(routine * 100) + '% Logic Parity (Offload Potential)';
 
-    // Core logic: 85% discount for routine tasks, 4% gateway governance overhead
-    const governedMonthly = ((monthly * (1 - routine)) + (monthly * routine * 0.15)) * 1.04;
-    const annualSavings = (monthly - governedMonthly) * 12;
+    // ── 1. AGENTS: each agent adds 9% loop-drift overhead to true monthly cost
+    const agentMultiplier  = 1 + (agents * 0.09);
 
-    document.getElementById('currAnn').textContent = fmt(monthly * 12);
-    document.getElementById('govAnn').textContent = fmt(governedMonthly * 12);
-    document.getElementById('roiMult').textContent = (monthly / governedMonthly).toFixed(1) + 'x';
+    // ── 2. TEAM SIZE: each engineer beyond the first adds 2% ungoverned call sprawl
+    const sprawlMultiplier = 1 + (team - 1) * 0.02;
+
+    // ── 3. TRUE MONTHLY: what you're actually burning once agents + sprawl are factored in
+    const trueMonthly = monthly * agentMultiplier * sprawlMultiplier;
+
+    // ── 4. MODEL RATE: local SLM costs ~$0.0005/1K tokens (commodity tier)
+    //    substitution discount = how much cheaper SLM is vs your frontier model
+    //    GPT-4 Turbo (0.075) → ~99.3% savings on routed tasks
+    //    Claude Sonnet (0.015) → ~96.7% savings on routed tasks
+    //    Gemini 1.5 Pro (0.007) → ~92.9% savings on routed tasks
+    const slmCostPer1K    = 0.0005;
+    const slmDiscount     = Math.max(0.10, 1 - (slmCostPer1K / modelRate));
+
+    // ── 5. GOVERNED COST: routine tasks routed to SLM, complex tasks stay on frontier
+    //    4% gateway governance overhead applied on top
+    const governedMonthly = (
+      (trueMonthly * (1 - routine)) +              // complex tasks → frontier model
+      (trueMonthly * routine * (1 - slmDiscount))  // routine tasks → local SLM
+    ) * 1.04;                                      // gateway overhead
+
+    // ── 6. SAVINGS vs true (ungoverned) cost — not just the invoice
+    const annualSavings = (trueMonthly - governedMonthly) * 12;
+
+    // ── UPDATE UI ──
+    document.getElementById('currAnn').textContent  = fmt(trueMonthly * 12);   // shows true burn
+    document.getElementById('govAnn').textContent   = fmt(governedMonthly * 12);
+    document.getElementById('roiMult').textContent  = (trueMonthly / governedMonthly).toFixed(1) + 'x';
     document.getElementById('annSavings').textContent = fmt(annualSavings);
-    document.getElementById('perEng').textContent = `That's ${fmt(annualSavings / team)}/engineer/yr back in budget`;
+    document.getElementById('perEng').textContent   = `That's ${fmt(annualSavings / team)}/engineer/yr back in budget`;
 
-    document.getElementById('labelUngov').textContent = fmt(monthly) + '/mo';
-    document.getElementById('labelGov').textContent = fmt(governedMonthly) + '/mo';
-    document.getElementById('barGov').style.width = (governedMonthly / monthly * 100) + '%';
+    document.getElementById('labelUngov').textContent = fmt(trueMonthly) + '/mo';
+    document.getElementById('labelGov').textContent   = fmt(governedMonthly) + '/mo';
+    document.getElementById('barGov').style.width     = (governedMonthly / trueMonthly * 100) + '%';
 
-    document.getElementById('p-monthly').textContent = fmt(monthly) + " / month";
-    document.getElementById('p-model').textContent = modelName;
-    document.getElementById('p-agents').textContent = agents + " Active Agent Pipelines";
-    document.getElementById('p-team').textContent = team + "-Engineer Deployment";
+    document.getElementById('p-monthly').textContent = fmt(monthly) + ' / month';
+    document.getElementById('p-model').textContent   = modelName;
+    document.getElementById('p-agents').textContent  = agents + ' Active Agent Pipelines';
+    document.getElementById('p-team').textContent    = team + '-Engineer Deployment';
 
-    document.getElementById('riskAgents').textContent = `${agents} active agents with no circuit breaker. A single recursive loop can exhaust weeks of budget in minutes.`;
-    document.getElementById('riskOveruse').textContent = `${Math.round(routine * 100)}% routine tasks hitting expensive frontier models. Shadow Mode can validate SLM parity safely.`;
-    document.getElementById('riskCeiling').textContent = `At ${fmt(monthly)}/mo you have no hard budget enforcement. One rogue pipeline = board-level incident.`;
-    document.getElementById('riskAudit').textContent = `${team} engineers generating LLM calls with zero cryptographic provenance. Compliance exposure grows with team size.`;
+    // ── RISK CARDS ──
+    document.getElementById('riskAgents').textContent  = agents === 0
+      ? 'No active agents today — but one new pipeline with no circuit breaker can exhaust weeks of budget in minutes.'
+      : `${agents} active agents with no circuit breaker. Loop-drift is adding ${Math.round(agents * 9)}% to your true monthly burn right now.`;
+
+    document.getElementById('riskOveruse').textContent =
+      `${Math.round(routine * 100)}% routine tasks hitting ${modelName} at $${modelRate}/1K tokens. Gateway routes these to a $0.0005/1K local SLM — ${Math.round(slmDiscount * 100)}% cheaper per call.`;
+
+    document.getElementById('riskCeiling').textContent =
+      `At ${fmt(trueMonthly)}/mo true burn (invoice + agent overhead + team sprawl), you have no hard ceiling. One rogue pipeline = board-level incident.`;
+
+    document.getElementById('riskAudit').textContent =
+      `${team} engineer${team > 1 ? 's' : ''} generating LLM calls with zero cryptographic provenance. Compliance exposure grows with every hire.`;
   }
 
-  // FIX 4: Theme toggle — dark (default) / light (board view)
   function toggleTheme() {
     const body = document.body;
     const isLight = body.getAttribute('data-theme') === 'light';
