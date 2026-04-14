@@ -38,6 +38,6 @@ SentryNode Gateway is opening 2 Design Partner slots for enterprise teams buildi
 
 If your team is past first deployment and the cost curve is already uncomfortable — that's the conversation.
 
-📩 nehadangwal@sentrynodegateway.com
+📩 partners@sentrynodegateway.com
 
 linkedin.com/in/nehadangwal
