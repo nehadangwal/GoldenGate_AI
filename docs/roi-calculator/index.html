@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SentryNode Gateway | FinOps 2026 Executive Audit</title>
@@ -282,6 +283,7 @@
 
     .pricing-note { background: #f9f9f9 !important; border-color: #ddd !important; color: #555 !important; }
     .cta-label, .cta-sub { display: none; }
+    .cf-turnstile, #verify-msg { display: none !important; }
   }
 </style>
 </head>
@@ -404,16 +406,32 @@
 
   <!-- FIX 2: Revised CTA — no "free", signals selectivity -->
   <div class="cta">
-    <p class="cta-label">SentryNode Gateway is accepting 2 Design Partner slots now</p>
-    <a href="https://meetings-na2.hubspot.com/neha-dangwal" class="btn btn-main">→ Request Design Partner Conversation</a>
-    <button onclick="window.print()" class="btn btn-outline">Export CFO Report (PDF)</button>
-    <p class="cta-sub">SentryNode Gateway · U.S. Patent Pending #63/982,542 · partners@sentrynodegateway.com</p>
+  <p class="cta-label">SentryNode Gateway is accepting 2 Design Partner slots now</p>
+  <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+    <div class="cf-turnstile" 
+         data-sitekey="0x4AAAAAADDe8TE35s8twxWj" 
+         data-callback="onTurnstileSuccess"></div>
   </div>
+  <a href="https://meetings-na2.hubspot.com/neha-dangwal" 
+     id="book-btn" 
+     class="btn btn-main" 
+     style="display: none;">→ Request Design Partner Conversation</a>
+  <p id="verify-msg" style="font-family:'DM Mono'; font-size:11px; color:var(--muted); margin-bottom: 15px;">
+    Please verify you are human to unlock booking.
+  </p>
+  <button onclick="window.print()" class="btn btn-outline">Export CFO Report (PDF)</button>
+  <p class="cta-sub">SentryNode Gateway · U.S. Patent Pending #63/982,542 · partners@sentrynodegateway.com</p>
+</div>
 
 </div>
 
 <script>
   function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
+  // Revealed the button once human is verified
+function onTurnstileSuccess(token) {
+  document.getElementById('book-btn').style.display = 'inline-block';
+  document.getElementById('verify-msg').style.display = 'none';
+}
 
   function calculate() {
     const monthly  = parseFloat(document.getElementById('monthlySpend').value) || 0;
