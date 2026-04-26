@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> SentryNode Gateway </title>
@@ -448,11 +449,31 @@
   </div>
 
   <footer class="footer-container">
-    <div class="footer-cta">
-      <div style="font-family:'DM Mono'; font-size:0.6rem; opacity:0.6; text-transform:uppercase;">Design Partner</div>
-      <h3>2 Slots Open Now</h3>
-      <a href="https://meetings-na2.hubspot.com/neha-dangwal" class="btn-black">→ Book a Conversation</a>
+  <div class="footer-cta">
+    <div style="font-family:'DM Mono'; font-size:0.6rem; opacity:0.6; text-transform:uppercase;">Design Partner</div>
+    <h3>2 Slots Open Now</h3>
+    
+    <div style="display: flex; justify-content: center; margin: 15px 0;">
+      <div class="cf-turnstile" 
+           data-sitekey="0x4AAAAAADDe8TE35s8twxWj" 
+           data-callback="onTurnstileSuccess"></div>
     </div>
+
+    <a href="https://meetings-na2.hubspot.com/neha-dangwal" 
+       id="book-btn" 
+       class="btn-black" 
+       style="display: none; margin-top: 5px;">→ Book a Conversation</a>
+    
+    <p id="verify-msg" style="font-family:'DM Mono'; font-size:0.7rem; margin-top:10px; color:var(--ink);">Please verify you are human to book.</p>
+  </div>
+
+<script>
+  // This function runs automatically when the human passes the challenge
+  function onTurnstileSuccess(token) {
+    document.getElementById('book-btn').style.display = 'inline-block';
+    document.getElementById('verify-msg').style.display = 'none';
+  }
+</script>
 
     <div class="footer-links-grid">
       <div>
